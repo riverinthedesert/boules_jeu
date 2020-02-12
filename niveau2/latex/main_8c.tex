@@ -1,0 +1,336 @@
+\hypertarget{main_8c}{\section{main.\-c File Reference}
+\label{main_8c}\index{main.\-c@{main.\-c}}
+}
+{\ttfamily \#include $<$math.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}sdl-\/light.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structhole__s}{hole\-\_\-s}
+\item 
+struct \hyperlink{structball__s}{ball\-\_\-s}
+\begin{DoxyCompactList}\small\item\em Représentation du monde du jeu. \end{DoxyCompactList}\item 
+struct \hyperlink{structworld__s}{world\-\_\-s}
+\begin{DoxyCompactList}\small\item\em La fonction initialise de boule. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{main_8c_a2cd109632a6dcccaa80b43561b1ab700}{\#define \hyperlink{main_8c_a2cd109632a6dcccaa80b43561b1ab700}{S\-C\-R\-E\-E\-N\-\_\-\-W\-I\-D\-T\-H}~1288}\label{main_8c_a2cd109632a6dcccaa80b43561b1ab700}
+
+\begin{DoxyCompactList}\small\item\em Largeur de l'écran de jeu. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a6974d08a74da681b3957b2fead2608b8}{\#define \hyperlink{main_8c_a6974d08a74da681b3957b2fead2608b8}{S\-C\-R\-E\-E\-N\-\_\-\-H\-E\-I\-G\-H\-T}~725}\label{main_8c_a6974d08a74da681b3957b2fead2608b8}
+
+\begin{DoxyCompactList}\small\item\em Hauteur de l'écran de jeu. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a38f6216d54c4b55423405a2df0a7fb57}{\#define \hyperlink{main_8c_a38f6216d54c4b55423405a2df0a7fb57}{B\-A\-L\-L\-\_\-\-S\-I\-Z\-E}~42}\label{main_8c_a38f6216d54c4b55423405a2df0a7fb57}
+
+\begin{DoxyCompactList}\small\item\em Taille d'une boule. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a40e535c004793f7d97fcd47231d6f152}{\#define \hyperlink{main_8c_a40e535c004793f7d97fcd47231d6f152}{S\-P\-E\-E\-D\-\_\-\-C\-O\-E\-F}~0.\-1}\label{main_8c_a40e535c004793f7d97fcd47231d6f152}
+
+\begin{DoxyCompactList}\small\item\em Taille d'une B\-A\-L\-L. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a670e281e909d14a6172f3014861e30e4}{\#define {\bfseries F\-R\-I\-C\-T\-I\-O\-N}~0.\-05}\label{main_8c_a670e281e909d14a6172f3014861e30e4}
+
+\item 
+\hypertarget{main_8c_a437ef08681e7210d6678427030446a54}{\#define \hyperlink{main_8c_a437ef08681e7210d6678427030446a54}{L\-E\-F\-T}~625}\label{main_8c_a437ef08681e7210d6678427030446a54}
+
+\begin{DoxyCompactList}\small\item\em R\-E\-D\-U\-I\-R\-E V\-I\-T\-E\-S\-S. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a80fb826a684cf3f0d306b22aa100ddac}{\#define {\bfseries R\-I\-G\-H\-T}~663}\label{main_8c_a80fb826a684cf3f0d306b22aa100ddac}
+
+\item 
+\hypertarget{main_8c_a393e237f81b072194a8b264849ee3f3e}{\#define {\bfseries L\-E\-F\-T\-\_\-\-L\-I\-M\-I\-T}~85}\label{main_8c_a393e237f81b072194a8b264849ee3f3e}
+
+\item 
+\hypertarget{main_8c_a9b15ce2f156a244c94e572735e752843}{\#define \hyperlink{main_8c_a9b15ce2f156a244c94e572735e752843}{R\-I\-G\-H\-T\-\_\-\-L\-I\-M\-I\-T}~1202}\label{main_8c_a9b15ce2f156a244c94e572735e752843}
+
+\begin{DoxyCompactList}\small\item\em abscisse du bord droit \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a0210f52da3ff0c5b8f19dbd2d7846ffb}{\#define \hyperlink{main_8c_a0210f52da3ff0c5b8f19dbd2d7846ffb}{T\-O\-P\-\_\-\-L\-I\-M\-I\-T}~85}\label{main_8c_a0210f52da3ff0c5b8f19dbd2d7846ffb}
+
+\begin{DoxyCompactList}\small\item\em abscisse du bord gauche \end{DoxyCompactList}\item 
+\hypertarget{main_8c_ad9036d778addd41d45d1e8e735391b19}{\#define \hyperlink{main_8c_ad9036d778addd41d45d1e8e735391b19}{B\-O\-T\-T\-O\-M\-\_\-\-L\-I\-M\-I\-T}~640}\label{main_8c_ad9036d778addd41d45d1e8e735391b19}
+
+\begin{DoxyCompactList}\small\item\em ordonne du bord haut \end{DoxyCompactList}\item 
+\hypertarget{main_8c_ac1f6f3e97dadf72bc24cc341b0560ea2}{\#define \hyperlink{main_8c_ac1f6f3e97dadf72bc24cc341b0560ea2}{H\-O\-L\-E\-\_\-\-R\-A\-D\-I\-U\-S}~35}\label{main_8c_ac1f6f3e97dadf72bc24cc341b0560ea2}
+
+\begin{DoxyCompactList}\small\item\em ordonne du bord en bas \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a91c8c5c1b1d20b0179a711bf6c43160f}{\#define {\bfseries N\-B\-\_\-\-H\-O\-L\-E\-S}~6}\label{main_8c_a91c8c5c1b1d20b0179a711bf6c43160f}
+
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{main_8c_abe1aa3fa1e124cd7e88c0ed0c06ac51b}{typedef struct \hyperlink{structhole__s}{hole\-\_\-s} {\bfseries hole\-\_\-t}}\label{main_8c_abe1aa3fa1e124cd7e88c0ed0c06ac51b}
+
+\item 
+\hypertarget{main_8c_afbe854d5148ac4984a07982fd23cb832}{typedef struct \hyperlink{structball__s}{ball\-\_\-s} {\bfseries ball\-\_\-t}}\label{main_8c_afbe854d5148ac4984a07982fd23cb832}
+
+\item 
+\hypertarget{main_8c_ad55869c5e54f717062ec699d20fa8886}{typedef struct \hyperlink{structworld__s}{world\-\_\-s} {\bfseries world\-\_\-t}}\label{main_8c_ad55869c5e54f717062ec699d20fa8886}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{main_8c_aa79ee3db46d95c70109aee6531e8303a}{ini\-\_\-trou} (\hyperlink{structhole__s}{hole\-\_\-t} $\ast$hole, double x, double y)
+\begin{DoxyCompactList}\small\item\em La fonction initialise les données du monde du jeu. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_ac175ccb8d9b1654c8afe2309a47719c1}{void {\bfseries ini\-\_\-trous} (\hyperlink{structworld__s}{world\-\_\-t} $\ast$world)}\label{main_8c_ac175ccb8d9b1654c8afe2309a47719c1}
+
+\item 
+\hypertarget{main_8c_a5676e72ded3c1a993c4c975ef9958288}{void \hyperlink{main_8c_a5676e72ded3c1a993c4c975ef9958288}{init\-\_\-data} (\hyperlink{structworld__s}{world\-\_\-t} $\ast$world)}\label{main_8c_a5676e72ded3c1a993c4c975ef9958288}
+
+\begin{DoxyCompactList}\small\item\em La fonction initialise les données du trou. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_abcbee1dbb5697f9d0de3f737f9c7aafe}{clean\-\_\-data} (\hyperlink{structworld__s}{world\-\_\-t} $\ast$world)
+\begin{DoxyCompactList}\small\item\em La fonction nettoie les données du monde. \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_a87c51ee2e71f0707b7c964afc414f556}{is\-\_\-game\-\_\-over} (\hyperlink{structworld__s}{world\-\_\-t} $\ast$world)
+\begin{DoxyCompactList}\small\item\em La fonction indique si le jeu est fini en fonction des données du monde. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a6c91f82a5ece8b14628159353390adf4}{update\-\_\-data} (\hyperlink{structworld__s}{world\-\_\-t} $\ast$world)
+\begin{DoxyCompactList}\small\item\em La fonction met à jour les données en tenant compte de la physique du monde. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a4791af5d8f61cf796f97f0ea6c2d67db}{init\-\_\-graphics} (S\-D\-L\-\_\-\-Surface $\ast$screen, \hyperlink{structworld__s}{world\-\_\-t} $\ast$world)
+\begin{DoxyCompactList}\small\item\em La fonction initialise les transparences des différentes surfaces. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a32c77c9bd6515c99c9b0b87044407489}{void {\bfseries apply\-\_\-table} (S\-D\-L\-\_\-\-Surface $\ast$table, S\-D\-L\-\_\-\-Surface $\ast$screen)}\label{main_8c_a32c77c9bd6515c99c9b0b87044407489}
+
+\item 
+double \hyperlink{main_8c_a8cb0a7d424399b7c912dd0ca0d8b0162}{distance} (\hyperlink{structball__s}{ball\-\_\-t} $\ast$b1, \hyperlink{structball__s}{ball\-\_\-t} $\ast$b2)
+\begin{DoxyCompactList}\small\item\em La fonction rafrachit l'écran en fonction de l'état des données du monde. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a09aefa03131f30d5a8390c0d7929d1f7}{int \hyperlink{main_8c_a09aefa03131f30d5a8390c0d7929d1f7}{touche} (\hyperlink{structball__s}{ball\-\_\-t} $\ast$b1, \hyperlink{structball__s}{ball\-\_\-t} $\ast$b2)}\label{main_8c_a09aefa03131f30d5a8390c0d7929d1f7}
+
+\begin{DoxyCompactList}\small\item\em La fonction qui calcule et renvoie la distance euclidienne entreles deux boulesb1etb2. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_af95d17d1f3064fadc022baf5289166b5}{void \hyperlink{main_8c_af95d17d1f3064fadc022baf5289166b5}{set\-\_\-pos} (\hyperlink{structball__s}{ball\-\_\-t} $\ast$ball, double x, double y)}\label{main_8c_af95d17d1f3064fadc022baf5289166b5}
+
+\begin{DoxyCompactList}\small\item\em La fonction qui prend comme parametres deux boules et renvoie 1 si elles se touchent, 0 sinon. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a9d1774802ddb6c3c53c478b239c9ed65}{double \hyperlink{main_8c_a9d1774802ddb6c3c53c478b239c9ed65}{dis} (double x, double y)}\label{main_8c_a9d1774802ddb6c3c53c478b239c9ed65}
+
+\begin{DoxyCompactList}\small\item\em La fonction qui reposition de ball. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a120eaef96da062eaabec10056064074d}{void \hyperlink{main_8c_a120eaef96da062eaabec10056064074d}{touche\-\_\-arret} (\hyperlink{structball__s}{ball\-\_\-t} $\ast$b1, \hyperlink{structball__s}{ball\-\_\-t} $\ast$b2)}\label{main_8c_a120eaef96da062eaabec10056064074d}
+
+\begin{DoxyCompactList}\small\item\em La fonction qui retourner la distance. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_ace8725184f4d20ca402f1c8b5a4ab0f4}{double \hyperlink{main_8c_ace8725184f4d20ca402f1c8b5a4ab0f4}{dist} (\hyperlink{structball__s}{ball\-\_\-t} $\ast$b1, \hyperlink{structhole__s}{hole\-\_\-t} $\ast$hole)}\label{main_8c_ace8725184f4d20ca402f1c8b5a4ab0f4}
+
+\begin{DoxyCompactList}\small\item\em La fonction quand la boule blanche rencontre la boule de couleur, elle s’arrˆete. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a04e388214ede7985295c807f4418f18c}{int \hyperlink{main_8c_a04e388214ede7985295c807f4418f18c}{tomb\-\_\-trou} (\hyperlink{structball__s}{ball\-\_\-t} $\ast$b1, \hyperlink{structhole__s}{hole\-\_\-t} $\ast$hole)}\label{main_8c_a04e388214ede7985295c807f4418f18c}
+
+\begin{DoxyCompactList}\small\item\em La fonction qui retourner la distance entre trou et boule. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a1ed7c74d033a991e5eb5273bb657305c}{void \hyperlink{main_8c_a1ed7c74d033a991e5eb5273bb657305c}{dispa} (\hyperlink{structworld__s}{world\-\_\-t} $\ast$world)}\label{main_8c_a1ed7c74d033a991e5eb5273bb657305c}
+
+\begin{DoxyCompactList}\small\item\em La fonction qui renvoie 1 si une boule tombe dans un trou donn ́e en param`etres, 0 sinon. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_af3ab5b0957adfb717c575fb85e0eb1fa}{int {\bfseries boule\-\_\-bord\-\_\-right} (\hyperlink{structball__s}{ball\-\_\-t} $\ast$ball)}\label{main_8c_af3ab5b0957adfb717c575fb85e0eb1fa}
+
+\item 
+\hypertarget{main_8c_a18781d52f175605554dc06c422c2f66f}{int {\bfseries boule\-\_\-bord\-\_\-left} (\hyperlink{structball__s}{ball\-\_\-t} $\ast$ball)}\label{main_8c_a18781d52f175605554dc06c422c2f66f}
+
+\item 
+\hypertarget{main_8c_a772bd0ba6e0645a43f69d35608ca66b2}{int {\bfseries boule\-\_\-bord\-\_\-bottom} (\hyperlink{structball__s}{ball\-\_\-t} $\ast$ball)}\label{main_8c_a772bd0ba6e0645a43f69d35608ca66b2}
+
+\item 
+\hypertarget{main_8c_a57444fadc629acc8884d4ffe0906137b}{int {\bfseries boule\-\_\-bord\-\_\-top} (\hyperlink{structball__s}{ball\-\_\-t} $\ast$ball)}\label{main_8c_a57444fadc629acc8884d4ffe0906137b}
+
+\item 
+void \hyperlink{main_8c_afe0c9238f37d4107d0869ccd5bb23a5b}{set\-\_\-speed} (\hyperlink{structball__s}{ball\-\_\-t} $\ast$ball, double vx, double vy)
+\begin{DoxyCompactList}\small\item\em La fonction qui renvoie 1 si elle touche lebord en bas, 0 sinon. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_aac729d006c26024c2149ce44cdebd88f}{set\-\_\-position} (\hyperlink{structball__s}{ball\-\_\-t} $\ast$ball, double x, double y)
+\begin{DoxyCompactList}\small\item\em La fonction qui met a jour la vitesse d’une boule ball avec les valeurs vx et vy. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_acf6aa8b4df15e32d435e49b11261bc0f}{refresh\-\_\-graphics} (S\-D\-L\-\_\-\-Surface $\ast$screen, \hyperlink{structworld__s}{world\-\_\-t} $\ast$world)
+\begin{DoxyCompactList}\small\item\em La fonction qui met a jour la position d’une bouleballavec les coordonnees (x,y) \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a947b9f8960b2202788f43c71fbaa9d67}{handle\-\_\-events} (S\-D\-L\-\_\-\-Event $\ast$event, \hyperlink{structworld__s}{world\-\_\-t} $\ast$world)
+\begin{DoxyCompactList}\small\item\em La fonction gère les évènements ayant eu lieu et qui n'ont pas encore été traités. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a700a0caa5b70a06d1064e576f9f3cf65}{int \hyperlink{main_8c_a700a0caa5b70a06d1064e576f9f3cf65}{main} (int argc, char $\ast$args\mbox{[}$\,$\mbox{]})}\label{main_8c_a700a0caa5b70a06d1064e576f9f3cf65}
+
+\begin{DoxyCompactList}\small\item\em programme principal qui implémente la boucle du jeu \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Yunfan C\-A\-I 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\-2 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+02 avril 2019 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\hypertarget{main_8c_abcbee1dbb5697f9d0de3f737f9c7aafe}{\index{main.\-c@{main.\-c}!clean\-\_\-data@{clean\-\_\-data}}
+\index{clean\-\_\-data@{clean\-\_\-data}!main.c@{main.\-c}}
+\subsubsection[{clean\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}void clean\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{{\bf world\-\_\-t} $\ast$}]{world}
+\end{DoxyParamCaption}
+)}}\label{main_8c_abcbee1dbb5697f9d0de3f737f9c7aafe}
+
+
+La fonction nettoie les données du monde. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em world} & les données du monde \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_a8cb0a7d424399b7c912dd0ca0d8b0162}{\index{main.\-c@{main.\-c}!distance@{distance}}
+\index{distance@{distance}!main.c@{main.\-c}}
+\subsubsection[{distance}]{\setlength{\rightskip}{0pt plus 5cm}double distance (
+\begin{DoxyParamCaption}
+\item[{{\bf ball\-\_\-t} $\ast$}]{b1, }
+\item[{{\bf ball\-\_\-t} $\ast$}]{b2}
+\end{DoxyParamCaption}
+)}}\label{main_8c_a8cb0a7d424399b7c912dd0ca0d8b0162}
+
+
+La fonction rafrachit l'écran en fonction de l'état des données du monde. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em screen} & la surface de l'écran de jeu(world-\/$>$y+\-B\-A\-L\-L\-\_\-\-S\-I\-Z\-E/2) \\
+\hline
+{\em world} & les données du monde \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_a947b9f8960b2202788f43c71fbaa9d67}{\index{main.\-c@{main.\-c}!handle\-\_\-events@{handle\-\_\-events}}
+\index{handle\-\_\-events@{handle\-\_\-events}!main.c@{main.\-c}}
+\subsubsection[{handle\-\_\-events}]{\setlength{\rightskip}{0pt plus 5cm}void handle\-\_\-events (
+\begin{DoxyParamCaption}
+\item[{S\-D\-L\-\_\-\-Event $\ast$}]{event, }
+\item[{{\bf world\-\_\-t} $\ast$}]{world}
+\end{DoxyParamCaption}
+)}}\label{main_8c_a947b9f8960b2202788f43c71fbaa9d67}
+
+
+La fonction gère les évènements ayant eu lieu et qui n'ont pas encore été traités. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & paramètre qui contient les événements \\
+\hline
+{\em world} & les données du monde \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_aa79ee3db46d95c70109aee6531e8303a}{\index{main.\-c@{main.\-c}!ini\-\_\-trou@{ini\-\_\-trou}}
+\index{ini\-\_\-trou@{ini\-\_\-trou}!main.c@{main.\-c}}
+\subsubsection[{ini\-\_\-trou}]{\setlength{\rightskip}{0pt plus 5cm}void ini\-\_\-trou (
+\begin{DoxyParamCaption}
+\item[{{\bf hole\-\_\-t} $\ast$}]{hole, }
+\item[{double}]{x, }
+\item[{double}]{y}
+\end{DoxyParamCaption}
+)}}\label{main_8c_aa79ee3db46d95c70109aee6531e8303a}
+
+
+La fonction initialise les données du monde du jeu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em world} & les données du monde \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_a4791af5d8f61cf796f97f0ea6c2d67db}{\index{main.\-c@{main.\-c}!init\-\_\-graphics@{init\-\_\-graphics}}
+\index{init\-\_\-graphics@{init\-\_\-graphics}!main.c@{main.\-c}}
+\subsubsection[{init\-\_\-graphics}]{\setlength{\rightskip}{0pt plus 5cm}void init\-\_\-graphics (
+\begin{DoxyParamCaption}
+\item[{S\-D\-L\-\_\-\-Surface $\ast$}]{screen, }
+\item[{{\bf world\-\_\-t} $\ast$}]{world}
+\end{DoxyParamCaption}
+)}}\label{main_8c_a4791af5d8f61cf796f97f0ea6c2d67db}
+
+
+La fonction initialise les transparences des différentes surfaces. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em screen} & la surface correspondant à l'écran de jeu \\
+\hline
+{\em world} & les données du monde \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_a87c51ee2e71f0707b7c964afc414f556}{\index{main.\-c@{main.\-c}!is\-\_\-game\-\_\-over@{is\-\_\-game\-\_\-over}}
+\index{is\-\_\-game\-\_\-over@{is\-\_\-game\-\_\-over}!main.c@{main.\-c}}
+\subsubsection[{is\-\_\-game\-\_\-over}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-game\-\_\-over (
+\begin{DoxyParamCaption}
+\item[{{\bf world\-\_\-t} $\ast$}]{world}
+\end{DoxyParamCaption}
+)}}\label{main_8c_a87c51ee2e71f0707b7c964afc414f556}
+
+
+La fonction indique si le jeu est fini en fonction des données du monde. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em world} & les données du monde \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 si le jeu est fini, 0 sinon 
+\end{DoxyReturn}
+\hypertarget{main_8c_acf6aa8b4df15e32d435e49b11261bc0f}{\index{main.\-c@{main.\-c}!refresh\-\_\-graphics@{refresh\-\_\-graphics}}
+\index{refresh\-\_\-graphics@{refresh\-\_\-graphics}!main.c@{main.\-c}}
+\subsubsection[{refresh\-\_\-graphics}]{\setlength{\rightskip}{0pt plus 5cm}void refresh\-\_\-graphics (
+\begin{DoxyParamCaption}
+\item[{S\-D\-L\-\_\-\-Surface $\ast$}]{screen, }
+\item[{{\bf world\-\_\-t} $\ast$}]{world}
+\end{DoxyParamCaption}
+)}}\label{main_8c_acf6aa8b4df15e32d435e49b11261bc0f}
+
+
+La fonction qui met a jour la position d’une bouleballavec les coordonnees (x,y) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em screen} & la surface de l'écran de jeu \\
+\hline
+{\em world} & les données du monde \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_aac729d006c26024c2149ce44cdebd88f}{\index{main.\-c@{main.\-c}!set\-\_\-position@{set\-\_\-position}}
+\index{set\-\_\-position@{set\-\_\-position}!main.c@{main.\-c}}
+\subsubsection[{set\-\_\-position}]{\setlength{\rightskip}{0pt plus 5cm}void set\-\_\-position (
+\begin{DoxyParamCaption}
+\item[{{\bf ball\-\_\-t} $\ast$}]{ball, }
+\item[{double}]{x, }
+\item[{double}]{y}
+\end{DoxyParamCaption}
+)}}\label{main_8c_aac729d006c26024c2149ce44cdebd88f}
+
+
+La fonction qui met a jour la vitesse d’une boule ball avec les valeurs vx et vy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em screen} & la surface de l'écran de dispajeu \\
+\hline
+{\em world} & les données du monde \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_afe0c9238f37d4107d0869ccd5bb23a5b}{\index{main.\-c@{main.\-c}!set\-\_\-speed@{set\-\_\-speed}}
+\index{set\-\_\-speed@{set\-\_\-speed}!main.c@{main.\-c}}
+\subsubsection[{set\-\_\-speed}]{\setlength{\rightskip}{0pt plus 5cm}void set\-\_\-speed (
+\begin{DoxyParamCaption}
+\item[{{\bf ball\-\_\-t} $\ast$}]{ball, }
+\item[{double}]{vx, }
+\item[{double}]{vy}
+\end{DoxyParamCaption}
+)}}\label{main_8c_afe0c9238f37d4107d0869ccd5bb23a5b}
+
+
+La fonction qui renvoie 1 si elle touche lebord en bas, 0 sinon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em screen} & laboule\-\_\-bord(\&world); surface de l'écran de jeu \\
+\hline
+{\em world} & les données du monde \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_a6c91f82a5ece8b14628159353390adf4}{\index{main.\-c@{main.\-c}!update\-\_\-data@{update\-\_\-data}}
+\index{update\-\_\-data@{update\-\_\-data}!main.c@{main.\-c}}
+\subsubsection[{update\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}void update\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{{\bf world\-\_\-t} $\ast$}]{world}
+\end{DoxyParamCaption}
+)}}\label{main_8c_a6c91f82a5ece8b14628159353390adf4}
+
+
+La fonction met à jour les données en tenant compte de la physique du monde. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em les} & données du monde \\
+\hline
+\end{DoxyParams}

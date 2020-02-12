@@ -1,0 +1,761 @@
+\hypertarget{main_8c}{\section{main.\-c File Reference}
+\label{main_8c}\index{main.\-c@{main.\-c}}
+}
+{\ttfamily \#include \char`\"{}collision.\-c\char`\"{}}\\*
+{\ttfamily \#include $<$math.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}sdl-\/light.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structhole__s}{hole\-\_\-s}
+\begin{DoxyCompactList}\small\item\em La fonction initialise de hole. \end{DoxyCompactList}\item 
+struct \hyperlink{structball__s}{ball\-\_\-s}
+\begin{DoxyCompactList}\small\item\em La fonction initialise de boule. \end{DoxyCompactList}\item 
+struct \hyperlink{structqueuebillard__s}{queuebillard\-\_\-s}
+\begin{DoxyCompactList}\small\item\em La fonction initialise de queuebillard. \end{DoxyCompactList}\item 
+struct \hyperlink{structworld__s}{world\-\_\-s}
+\begin{DoxyCompactList}\small\item\em world les données du monde \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{main_8c_a2cd109632a6dcccaa80b43561b1ab700}{\#define \hyperlink{main_8c_a2cd109632a6dcccaa80b43561b1ab700}{S\-C\-R\-E\-E\-N\-\_\-\-W\-I\-D\-T\-H}~1288}\label{main_8c_a2cd109632a6dcccaa80b43561b1ab700}
+
+\begin{DoxyCompactList}\small\item\em Largeur de l'écran de jeu. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a6974d08a74da681b3957b2fead2608b8}{\#define \hyperlink{main_8c_a6974d08a74da681b3957b2fead2608b8}{S\-C\-R\-E\-E\-N\-\_\-\-H\-E\-I\-G\-H\-T}~725}\label{main_8c_a6974d08a74da681b3957b2fead2608b8}
+
+\begin{DoxyCompactList}\small\item\em Hauteur de l'écran de jeu. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a38f6216d54c4b55423405a2df0a7fb57}{\#define \hyperlink{main_8c_a38f6216d54c4b55423405a2df0a7fb57}{B\-A\-L\-L\-\_\-\-S\-I\-Z\-E}~42}\label{main_8c_a38f6216d54c4b55423405a2df0a7fb57}
+
+\begin{DoxyCompactList}\small\item\em Taille d'une boule. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a40e535c004793f7d97fcd47231d6f152}{\#define \hyperlink{main_8c_a40e535c004793f7d97fcd47231d6f152}{S\-P\-E\-E\-D\-\_\-\-C\-O\-E\-F}~0.\-1}\label{main_8c_a40e535c004793f7d97fcd47231d6f152}
+
+\begin{DoxyCompactList}\small\item\em V\-I\-T\-E\-S\-S\-\_\-coefficient. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a670e281e909d14a6172f3014861e30e4}{\#define \hyperlink{main_8c_a670e281e909d14a6172f3014861e30e4}{F\-R\-I\-C\-T\-I\-O\-N}~0.\-05}\label{main_8c_a670e281e909d14a6172f3014861e30e4}
+
+\begin{DoxyCompactList}\small\item\em R\-E\-D\-U\-I\-R\-E V\-I\-T\-E\-S\-S. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a393e237f81b072194a8b264849ee3f3e}{\#define \hyperlink{main_8c_a393e237f81b072194a8b264849ee3f3e}{L\-E\-F\-T\-\_\-\-L\-I\-M\-I\-T}~85}\label{main_8c_a393e237f81b072194a8b264849ee3f3e}
+
+\begin{DoxyCompactList}\small\item\em abscisse du bord gauche \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a9b15ce2f156a244c94e572735e752843}{\#define \hyperlink{main_8c_a9b15ce2f156a244c94e572735e752843}{R\-I\-G\-H\-T\-\_\-\-L\-I\-M\-I\-T}~1202}\label{main_8c_a9b15ce2f156a244c94e572735e752843}
+
+\begin{DoxyCompactList}\small\item\em abscisse du bord droit \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a0210f52da3ff0c5b8f19dbd2d7846ffb}{\#define \hyperlink{main_8c_a0210f52da3ff0c5b8f19dbd2d7846ffb}{T\-O\-P\-\_\-\-L\-I\-M\-I\-T}~85}\label{main_8c_a0210f52da3ff0c5b8f19dbd2d7846ffb}
+
+\begin{DoxyCompactList}\small\item\em ordonne du bord haut \end{DoxyCompactList}\item 
+\hypertarget{main_8c_ad9036d778addd41d45d1e8e735391b19}{\#define \hyperlink{main_8c_ad9036d778addd41d45d1e8e735391b19}{B\-O\-T\-T\-O\-M\-\_\-\-L\-I\-M\-I\-T}~640}\label{main_8c_ad9036d778addd41d45d1e8e735391b19}
+
+\begin{DoxyCompactList}\small\item\em ordonne du bord en bas \end{DoxyCompactList}\item 
+\hypertarget{main_8c_ac1f6f3e97dadf72bc24cc341b0560ea2}{\#define \hyperlink{main_8c_ac1f6f3e97dadf72bc24cc341b0560ea2}{H\-O\-L\-E\-\_\-\-R\-A\-D\-I\-U\-S}~35}\label{main_8c_ac1f6f3e97dadf72bc24cc341b0560ea2}
+
+\begin{DoxyCompactList}\small\item\em radius de hole \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a91c8c5c1b1d20b0179a711bf6c43160f}{\#define \hyperlink{main_8c_a91c8c5c1b1d20b0179a711bf6c43160f}{N\-B\-\_\-\-H\-O\-L\-E\-S}~6}\label{main_8c_a91c8c5c1b1d20b0179a711bf6c43160f}
+
+\begin{DoxyCompactList}\small\item\em nombres des holes \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a8765fa63d035ad3d1e8d098eafce9484}{\#define \hyperlink{main_8c_a8765fa63d035ad3d1e8d098eafce9484}{H\-O\-L\-E\-\_\-\-T\-O\-P\-\_\-\-L\-E\-F\-T\-\_\-\-X}~75}\label{main_8c_a8765fa63d035ad3d1e8d098eafce9484}
+
+\begin{DoxyCompactList}\small\item\em abscisse de hole en bas a gauche \end{DoxyCompactList}\item 
+\hypertarget{main_8c_aeffac5393bcd2a712b5649f0d72a788c}{\#define \hyperlink{main_8c_aeffac5393bcd2a712b5649f0d72a788c}{H\-O\-L\-E\-\_\-\-T\-O\-P\-\_\-\-L\-E\-F\-T\-\_\-\-Y}~75}\label{main_8c_aeffac5393bcd2a712b5649f0d72a788c}
+
+\begin{DoxyCompactList}\small\item\em ordonne de hole en bas a gauche \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a8da2ad7963c15bb5973b5228d4bcf160}{\#define \hyperlink{main_8c_a8da2ad7963c15bb5973b5228d4bcf160}{H\-O\-L\-E\-\_\-\-T\-O\-P\-\_\-\-M\-I\-D\-\_\-\-X}~644}\label{main_8c_a8da2ad7963c15bb5973b5228d4bcf160}
+
+\begin{DoxyCompactList}\small\item\em abscisse de hole en haut en milieu \end{DoxyCompactList}\item 
+\hypertarget{main_8c_aa962e7e5b09cf9373cabb8d7667bb807}{\#define \hyperlink{main_8c_aa962e7e5b09cf9373cabb8d7667bb807}{H\-O\-L\-E\-\_\-\-T\-O\-P\-\_\-\-M\-I\-D\-\_\-\-Y}~40}\label{main_8c_aa962e7e5b09cf9373cabb8d7667bb807}
+
+\begin{DoxyCompactList}\small\item\em ordonne de hole en haut en milieu \end{DoxyCompactList}\item 
+\hypertarget{main_8c_aa05e9e875e8ad73f294261ae430f7654}{\#define \hyperlink{main_8c_aa05e9e875e8ad73f294261ae430f7654}{H\-O\-L\-E\-\_\-\-T\-O\-P\-\_\-\-R\-I\-G\-H\-T\-\_\-\-X}~1213}\label{main_8c_aa05e9e875e8ad73f294261ae430f7654}
+
+\begin{DoxyCompactList}\small\item\em abscisse de hole en haut a droit \end{DoxyCompactList}\item 
+\hypertarget{main_8c_ab0d2f5e3aa6c9b396766c082a94a2de2}{\#define \hyperlink{main_8c_ab0d2f5e3aa6c9b396766c082a94a2de2}{H\-O\-L\-E\-\_\-\-T\-O\-P\-\_\-\-R\-I\-G\-H\-T\-\_\-\-Y}~75}\label{main_8c_ab0d2f5e3aa6c9b396766c082a94a2de2}
+
+\begin{DoxyCompactList}\small\item\em ordonne de hole en haut a droit \end{DoxyCompactList}\item 
+\hypertarget{main_8c_aa16a86db96eaf0cceb0412eab1c76757}{\#define \hyperlink{main_8c_aa16a86db96eaf0cceb0412eab1c76757}{H\-O\-L\-E\-\_\-\-B\-O\-T\-T\-O\-M\-\_\-\-L\-E\-F\-T\-\_\-\-X}~75}\label{main_8c_aa16a86db96eaf0cceb0412eab1c76757}
+
+\begin{DoxyCompactList}\small\item\em abscisse de hole en bas a gauche \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a2d561490d9237dfbd3ecc8cc714cb712}{\#define \hyperlink{main_8c_a2d561490d9237dfbd3ecc8cc714cb712}{H\-O\-L\-E\-\_\-\-B\-O\-T\-T\-O\-M\-\_\-\-L\-E\-F\-T\-\_\-\-Y}~650}\label{main_8c_a2d561490d9237dfbd3ecc8cc714cb712}
+
+\begin{DoxyCompactList}\small\item\em ordonne de hole en bas a gauche \end{DoxyCompactList}\item 
+\hypertarget{main_8c_ac0ce7472ecd6f11c6615b7fb82d9f687}{\#define \hyperlink{main_8c_ac0ce7472ecd6f11c6615b7fb82d9f687}{H\-O\-L\-E\-\_\-\-B\-O\-T\-T\-O\-M\-\_\-\-R\-I\-G\-H\-T\-\_\-\-Y}~650}\label{main_8c_ac0ce7472ecd6f11c6615b7fb82d9f687}
+
+\begin{DoxyCompactList}\small\item\em ordoone de hole en bas a droit \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a3e781d99c38dff0ce5e3d8b0bbaa90ca}{\#define \hyperlink{main_8c_a3e781d99c38dff0ce5e3d8b0bbaa90ca}{H\-O\-L\-E\-\_\-\-B\-O\-T\-T\-O\-M\-\_\-\-R\-I\-G\-H\-T\-\_\-\-X}~1213}\label{main_8c_a3e781d99c38dff0ce5e3d8b0bbaa90ca}
+
+\begin{DoxyCompactList}\small\item\em abscisse de hole en bas a droit \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a343c450c39cc0779d26209bb0ee19536}{\#define \hyperlink{main_8c_a343c450c39cc0779d26209bb0ee19536}{H\-O\-L\-E\-\_\-\-B\-O\-T\-T\-O\-M\-\_\-\-M\-I\-D\-\_\-\-X}~644}\label{main_8c_a343c450c39cc0779d26209bb0ee19536}
+
+\begin{DoxyCompactList}\small\item\em abscisse de hole en bas en milieu \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a3a57c3731ba5217b1c72980108ebe812}{\#define \hyperlink{main_8c_a3a57c3731ba5217b1c72980108ebe812}{H\-O\-L\-E\-\_\-\-B\-O\-T\-T\-O\-M\-\_\-\-M\-I\-D\-\_\-\-Y}~685}\label{main_8c_a3a57c3731ba5217b1c72980108ebe812}
+
+\begin{DoxyCompactList}\small\item\em ordonne de hole en bas en milieu \end{DoxyCompactList}\item 
+\hypertarget{main_8c_aa1c63d462da9f1adaec241e3f5fce91c}{\#define \hyperlink{main_8c_aa1c63d462da9f1adaec241e3f5fce91c}{N\-B\-\_\-\-B\-A\-L\-L\-S}~16}\label{main_8c_aa1c63d462da9f1adaec241e3f5fce91c}
+
+\begin{DoxyCompactList}\small\item\em nombre des boules \end{DoxyCompactList}\item 
+\hypertarget{main_8c_adbf4eb347e8cf2b814e2324b6d86d135}{\#define \hyperlink{main_8c_adbf4eb347e8cf2b814e2324b6d86d135}{W\-I\-D\-T\-H\-\_\-\-Q\-U\-E\-U\-E\-B\-I\-L\-L\-A\-R\-D}~514}\label{main_8c_adbf4eb347e8cf2b814e2324b6d86d135}
+
+\begin{DoxyCompactList}\small\item\em abscisse de queuebillard \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a7a18307625e3b518e2526398a367a45f}{\#define \hyperlink{main_8c_a7a18307625e3b518e2526398a367a45f}{H\-E\-I\-G\-H\-T\-\_\-\-Q\-U\-E\-U\-E\-B\-I\-L\-L\-A\-R\-D}~17}\label{main_8c_a7a18307625e3b518e2526398a367a45f}
+
+\begin{DoxyCompactList}\small\item\em ordonne de queuebillard \end{DoxyCompactList}\item 
+\hypertarget{main_8c_aa2d4a4f600f038de83eb16a54249d342}{\#define \hyperlink{main_8c_aa2d4a4f600f038de83eb16a54249d342}{W\-I\-D\-T\-H\-\_\-\-B\-O\-U\-B\-L\-E\-\_\-\-B\-L\-A\-N\-C\-H\-E}~900}\label{main_8c_aa2d4a4f600f038de83eb16a54249d342}
+
+\begin{DoxyCompactList}\small\item\em abscisse de boule blanche \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a786641bb258bcd7e094a4162dfe8b8a0}{\#define \hyperlink{main_8c_a786641bb258bcd7e094a4162dfe8b8a0}{N\-B\-\_\-\-M\-A\-X\-\_\-\-L\-I\-G\-N\-E}~5}\label{main_8c_a786641bb258bcd7e094a4162dfe8b8a0}
+
+\begin{DoxyCompactList}\small\item\em nombre maximale de ligne de boule couleur \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a0a41d9a4ee8bc5e5acba26e0b96a7985}{\#define \hyperlink{main_8c_a0a41d9a4ee8bc5e5acba26e0b96a7985}{N\-B\-\_\-\-M\-A\-X\-\_\-\-C\-O\-L\-O\-N\-N\-E}~5}\label{main_8c_a0a41d9a4ee8bc5e5acba26e0b96a7985}
+
+\begin{DoxyCompactList}\small\item\em nombre maximale de colonne de boule couleur \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{main_8c_abe1aa3fa1e124cd7e88c0ed0c06ac51b}{typedef struct \hyperlink{structhole__s}{hole\-\_\-s} {\bfseries hole\-\_\-t}}\label{main_8c_abe1aa3fa1e124cd7e88c0ed0c06ac51b}
+
+\item 
+\hypertarget{main_8c_afbe854d5148ac4984a07982fd23cb832}{typedef struct \hyperlink{structball__s}{ball\-\_\-s} {\bfseries ball\-\_\-t}}\label{main_8c_afbe854d5148ac4984a07982fd23cb832}
+
+\item 
+\hypertarget{main_8c_a1f79fa95686c426779194c343e21bf36}{typedef struct \hyperlink{structqueuebillard__s}{queuebillard\-\_\-s} {\bfseries queuebillard\-\_\-t}}\label{main_8c_a1f79fa95686c426779194c343e21bf36}
+
+\item 
+\hypertarget{main_8c_ad55869c5e54f717062ec699d20fa8886}{typedef struct \hyperlink{structworld__s}{world\-\_\-s} {\bfseries world\-\_\-t}}\label{main_8c_ad55869c5e54f717062ec699d20fa8886}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{main_8c_aa79ee3db46d95c70109aee6531e8303a}{ini\-\_\-trou} (\hyperlink{structhole__s}{hole\-\_\-t} $\ast$hole, double x, double y)
+\begin{DoxyCompactList}\small\item\em La fonction initialise les données du trou. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_ac175ccb8d9b1654c8afe2309a47719c1}{void {\bfseries ini\-\_\-trous} (\hyperlink{structworld__s}{world\-\_\-t} $\ast$world)}\label{main_8c_ac175ccb8d9b1654c8afe2309a47719c1}
+
+\item 
+void \hyperlink{main_8c_ac064b7eac876567c5e8549a061e41f65}{ini\-\_\-boule\-\_\-blanche} (\hyperlink{structworld__s}{world\-\_\-t} $\ast$world)
+\begin{DoxyCompactList}\small\item\em La fonction initialise les données du boule blanche. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_abdbe0e697198ffee20f93b5401f0c4af}{ini\-\_\-boule\-\_\-couleur} (\hyperlink{structworld__s}{world\-\_\-t} $\ast$world)
+\begin{DoxyCompactList}\small\item\em La fonction initialise les données du boule couleur. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a21a4aabe402de4cd114116fc86423c89}{void \hyperlink{main_8c_a21a4aabe402de4cd114116fc86423c89}{ini\-\_\-queuebillard} (\hyperlink{structworld__s}{world\-\_\-t} $\ast$world)}\label{main_8c_a21a4aabe402de4cd114116fc86423c89}
+
+\begin{DoxyCompactList}\small\item\em La fonction initialise les données du Queue\-Billard. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a5676e72ded3c1a993c4c975ef9958288}{init\-\_\-data} (\hyperlink{structworld__s}{world\-\_\-t} $\ast$world)
+\begin{DoxyCompactList}\small\item\em La fonction initialise les données du monde du jeu. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_abcbee1dbb5697f9d0de3f737f9c7aafe}{clean\-\_\-data} (\hyperlink{structworld__s}{world\-\_\-t} $\ast$world)
+\begin{DoxyCompactList}\small\item\em La fonction nettoie les données du monde. \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_a87c51ee2e71f0707b7c964afc414f556}{is\-\_\-game\-\_\-over} (\hyperlink{structworld__s}{world\-\_\-t} $\ast$world)
+\begin{DoxyCompactList}\small\item\em La fonction indique si le jeu est fini en fonction des données du monde. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_af655233287f1cffc04748834ee06b333}{update\-\_\-data\-\_\-boule} (\hyperlink{structworld__s}{world\-\_\-t} $\ast$world)
+\begin{DoxyCompactList}\small\item\em La fonction met à jour les données en tenant compte de la physique du monde du boule ensembles. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a6c91f82a5ece8b14628159353390adf4}{update\-\_\-data} (\hyperlink{structworld__s}{world\-\_\-t} $\ast$world)
+\begin{DoxyCompactList}\small\item\em La fonction met à jour les données en tenant compte de la physique du monde. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a4791af5d8f61cf796f97f0ea6c2d67db}{init\-\_\-graphics} (S\-D\-L\-\_\-\-Surface $\ast$screen, \hyperlink{structworld__s}{world\-\_\-t} $\ast$world)
+\begin{DoxyCompactList}\small\item\em La fonction initialise les transparences des différentes surfaces. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a32c77c9bd6515c99c9b0b87044407489}{void {\bfseries apply\-\_\-table} (S\-D\-L\-\_\-\-Surface $\ast$table, S\-D\-L\-\_\-\-Surface $\ast$screen)}\label{main_8c_a32c77c9bd6515c99c9b0b87044407489}
+
+\item 
+double \hyperlink{main_8c_a8cb0a7d424399b7c912dd0ca0d8b0162}{distance} (\hyperlink{structball__s}{ball\-\_\-t} $\ast$b1, \hyperlink{structball__s}{ball\-\_\-t} $\ast$b2)
+\begin{DoxyCompactList}\small\item\em La fonction qui calcule et renvoie la distance euclidienne entreles deux boulesb1etb2. \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_a09aefa03131f30d5a8390c0d7929d1f7}{touche} (\hyperlink{structball__s}{ball\-\_\-t} $\ast$b1, \hyperlink{structball__s}{ball\-\_\-t} $\ast$b2)
+\begin{DoxyCompactList}\small\item\em La fonction qui prend comme parametres deux boules et renvoie 1 si elles se touchent, 0 sinon. \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_abeaef4053c9db5bf10e2d071462b7ec9}{touche\-\_\-trop\-\_\-inferieur} (\hyperlink{structball__s}{ball\-\_\-t} $\ast$b1, \hyperlink{structball__s}{ball\-\_\-t} $\ast$b2)
+\begin{DoxyCompactList}\small\item\em La fonction qui prend comme parametres deux boules et ren\-H\-O\-L\-E\-\_\-\-R\-A\-D\-I\-U\-S+\-B\-A\-L\-L\-\_\-\-S\-I\-Z\-E/2voie 1 si elles se touchent mais trop inferieur, 0 sinon. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_af95d17d1f3064fadc022baf5289166b5}{set\-\_\-pos} (\hyperlink{structball__s}{ball\-\_\-t} $\ast$ball, double x, double y)
+\begin{DoxyCompactList}\small\item\em La fonction qui reposition de ball. \end{DoxyCompactList}\item 
+double \hyperlink{main_8c_a9d1774802ddb6c3c53c478b239c9ed65}{dis} (double x, double y)
+\begin{DoxyCompactList}\small\item\em La fonction qui retourner la distance. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a8a36e1fd74c3155a475710c717d38d8a}{touche\-\_\-reposition} (\hyperlink{structball__s}{ball\-\_\-t} $\ast$b1, \hyperlink{structball__s}{ball\-\_\-t} $\ast$b2)
+\begin{DoxyCompactList}\small\item\em La fonction quand la boule blanche rencontre trop inférieur la boule de couleur, elle reposition. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a77c56b56cd62e1bfa2ae1393aafa2db8}{touche\-\_\-reposition\-\_\-boules} (\hyperlink{structworld__s}{world\-\_\-t} $\ast$world)
+\begin{DoxyCompactList}\small\item\em La fonction touche reposition apply a les boules. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_afddedc15b607bb3962aaf80d13083652}{touche\-\_\-collision} (\hyperlink{structball__s}{ball\-\_\-t} $\ast$b1, \hyperlink{structball__s}{ball\-\_\-t} $\ast$b2)
+\begin{DoxyCompactList}\small\item\em La fonction quand les boules rencontrent, elle collision. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a4eaef051377ec3d265137a0c0d250b1e}{touche\-\_\-collision\-\_\-boules} (\hyperlink{structworld__s}{world\-\_\-t} $\ast$world)
+\begin{DoxyCompactList}\small\item\em La fonction collision apply a les boules. \end{DoxyCompactList}\item 
+double \hyperlink{main_8c_ace8725184f4d20ca402f1c8b5a4ab0f4}{dist} (\hyperlink{structball__s}{ball\-\_\-t} $\ast$b1, \hyperlink{structhole__s}{hole\-\_\-t} $\ast$hole)
+\begin{DoxyCompactList}\small\item\em La fonction qui retourner la distance entre trou et boule. \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_af3ab5b0957adfb717c575fb85e0eb1fa}{boule\-\_\-bord\-\_\-right} (\hyperlink{structball__s}{ball\-\_\-t} $\ast$ball)
+\begin{DoxyCompactList}\small\item\em La fonction qui renvoie 1 si elle touche lebord en bas, 0 sinon. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a18781d52f175605554dc06c422c2f66f}{int {\bfseries boule\-\_\-bord\-\_\-left} (\hyperlink{structball__s}{ball\-\_\-t} $\ast$ball)}\label{main_8c_a18781d52f175605554dc06c422c2f66f}
+
+\item 
+\hypertarget{main_8c_a772bd0ba6e0645a43f69d35608ca66b2}{int {\bfseries boule\-\_\-bord\-\_\-bottom} (\hyperlink{structball__s}{ball\-\_\-t} $\ast$ball)}\label{main_8c_a772bd0ba6e0645a43f69d35608ca66b2}
+
+\item 
+\hypertarget{main_8c_a57444fadc629acc8884d4ffe0906137b}{int {\bfseries boule\-\_\-bord\-\_\-top} (\hyperlink{structball__s}{ball\-\_\-t} $\ast$ball)}\label{main_8c_a57444fadc629acc8884d4ffe0906137b}
+
+\item 
+int \hyperlink{main_8c_a04e388214ede7985295c807f4418f18c}{tomb\-\_\-trou} (\hyperlink{structball__s}{ball\-\_\-t} $\ast$b1, \hyperlink{structhole__s}{hole\-\_\-t} $\ast$hole)
+\begin{DoxyCompactList}\small\item\em La fonction qui renvoie 1 si une boule tombe dans un trou donn ́e en param`etres, 0 sinon. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a1ed7c74d033a991e5eb5273bb657305c}{dispa} (\hyperlink{structworld__s}{world\-\_\-t} $\ast$world)
+\begin{DoxyCompactList}\small\item\em La fonction de rafraichissementutilisera cette information pour afficher ou pas la boule. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_afe0c9238f37d4107d0869ccd5bb23a5b}{set\-\_\-speed} (\hyperlink{structball__s}{ball\-\_\-t} $\ast$ball, double vx, double vy)
+\begin{DoxyCompactList}\small\item\em La fonction qui met a jour la vitesse d’une boule ball avec les valeurs vx et vy. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a58ae897404d8fb2fef143eab4b26e590}{set\-\_\-speed\-\_\-boules} (\hyperlink{structworld__s}{world\-\_\-t} $\ast$world)
+\begin{DoxyCompactList}\small\item\em La fonction set speed apply a les boules. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_aac729d006c26024c2149ce44cdebd88f}{set\-\_\-position} (\hyperlink{structball__s}{ball\-\_\-t} $\ast$ball, double x, double y)
+\begin{DoxyCompactList}\small\item\em La fonction qui met a jour la position d’une bouleballavec les coordonnees (x,y) \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_ae97a638c7bbe1eeb3426c995fe0caed1}{set\-\_\-position\-\_\-boules} (\hyperlink{structworld__s}{world\-\_\-t} $\ast$world)
+\begin{DoxyCompactList}\small\item\em La fonction set position apply a les boules. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_acf6aa8b4df15e32d435e49b11261bc0f}{refresh\-\_\-graphics} (S\-D\-L\-\_\-\-Surface $\ast$screen, \hyperlink{structworld__s}{world\-\_\-t} $\ast$world)
+\begin{DoxyCompactList}\small\item\em La fonction rafrachit l'écran en fonction de l'état des données du monde. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a947b9f8960b2202788f43c71fbaa9d67}{handle\-\_\-events} (S\-D\-L\-\_\-\-Event $\ast$event, \hyperlink{structworld__s}{world\-\_\-t} $\ast$world)
+\begin{DoxyCompactList}\small\item\em La fonction qui trait les points des deux jouers. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a700a0caa5b70a06d1064e576f9f3cf65}{int \hyperlink{main_8c_a700a0caa5b70a06d1064e576f9f3cf65}{main} (int argc, char $\ast$args\mbox{[}$\,$\mbox{]})}\label{main_8c_a700a0caa5b70a06d1064e576f9f3cf65}
+
+\begin{DoxyCompactList}\small\item\em programme principal qui implémente la boucle du jeu \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{main_8c_a4aa91edf9d5669a1d0c36e0950962aaf}{som1} =0
+\begin{DoxyCompactList}\small\item\em Représentation du monde du jeu. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a7914513fef05ef09a44ae088e6cb9784}{int {\bfseries som2} =0}\label{main_8c_a7914513fef05ef09a44ae088e6cb9784}
+
+\item 
+\hypertarget{main_8c_a4e97310c1e6f36bfc596401b2909d3a9}{int {\bfseries tour} =0}\label{main_8c_a4e97310c1e6f36bfc596401b2909d3a9}
+
+\item 
+\hypertarget{main_8c_a3ddc31280311be4ba957e17b2888cade}{int {\bfseries som\-\_\-boule} =0}\label{main_8c_a3ddc31280311be4ba957e17b2888cade}
+
+\item 
+\hypertarget{main_8c_a68af47ac81b5a6bb58c8c05c24e902e8}{int {\bfseries ig}}\label{main_8c_a68af47ac81b5a6bb58c8c05c24e902e8}
+
+\item 
+\hypertarget{main_8c_a264d7907938e52414f6007ea28c2d0c9}{int {\bfseries ib}}\label{main_8c_a264d7907938e52414f6007ea28c2d0c9}
+
+\item 
+\hypertarget{main_8c_a50a0ba985d76ed4ef72a025ada75a5f9}{int {\bfseries iy}}\label{main_8c_a50a0ba985d76ed4ef72a025ada75a5f9}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Yunfan C\-A\-I 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\-2 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+02 avril 2019 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\hypertarget{main_8c_af3ab5b0957adfb717c575fb85e0eb1fa}{\index{main.\-c@{main.\-c}!boule\-\_\-bord\-\_\-right@{boule\-\_\-bord\-\_\-right}}
+\index{boule\-\_\-bord\-\_\-right@{boule\-\_\-bord\-\_\-right}!main.c@{main.\-c}}
+\subsubsection[{boule\-\_\-bord\-\_\-right}]{\setlength{\rightskip}{0pt plus 5cm}int boule\-\_\-bord\-\_\-right (
+\begin{DoxyParamCaption}
+\item[{{\bf ball\-\_\-t} $\ast$}]{ball}
+\end{DoxyParamCaption}
+)}}\label{main_8c_af3ab5b0957adfb717c575fb85e0eb1fa}
+
+
+La fonction qui renvoie 1 si elle touche lebord en bas, 0 sinon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ball} & les donnees du boule \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_abcbee1dbb5697f9d0de3f737f9c7aafe}{\index{main.\-c@{main.\-c}!clean\-\_\-data@{clean\-\_\-data}}
+\index{clean\-\_\-data@{clean\-\_\-data}!main.c@{main.\-c}}
+\subsubsection[{clean\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}void clean\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{{\bf world\-\_\-t} $\ast$}]{world}
+\end{DoxyParamCaption}
+)}}\label{main_8c_abcbee1dbb5697f9d0de3f737f9c7aafe}
+
+
+La fonction nettoie les données du monde. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em world} & les données du monde \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_a9d1774802ddb6c3c53c478b239c9ed65}{\index{main.\-c@{main.\-c}!dis@{dis}}
+\index{dis@{dis}!main.c@{main.\-c}}
+\subsubsection[{dis}]{\setlength{\rightskip}{0pt plus 5cm}double dis (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{double}]{y}
+\end{DoxyParamCaption}
+)}}\label{main_8c_a9d1774802ddb6c3c53c478b239c9ed65}
+
+
+La fonction qui retourner la distance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & le abscisse du boule \\
+\hline
+{\em y} & l'ordonne du boule \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_a1ed7c74d033a991e5eb5273bb657305c}{\index{main.\-c@{main.\-c}!dispa@{dispa}}
+\index{dispa@{dispa}!main.c@{main.\-c}}
+\subsubsection[{dispa}]{\setlength{\rightskip}{0pt plus 5cm}void dispa (
+\begin{DoxyParamCaption}
+\item[{{\bf world\-\_\-t} $\ast$}]{world}
+\end{DoxyParamCaption}
+)}}\label{main_8c_a1ed7c74d033a991e5eb5273bb657305c}
+
+
+La fonction de rafraichissementutilisera cette information pour afficher ou pas la boule. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em world} & les données du monde \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_ace8725184f4d20ca402f1c8b5a4ab0f4}{\index{main.\-c@{main.\-c}!dist@{dist}}
+\index{dist@{dist}!main.c@{main.\-c}}
+\subsubsection[{dist}]{\setlength{\rightskip}{0pt plus 5cm}double dist (
+\begin{DoxyParamCaption}
+\item[{{\bf ball\-\_\-t} $\ast$}]{b1, }
+\item[{{\bf hole\-\_\-t} $\ast$}]{hole}
+\end{DoxyParamCaption}
+)}}\label{main_8c_ace8725184f4d20ca402f1c8b5a4ab0f4}
+
+
+La fonction qui retourner la distance entre trou et boule. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ball} & les donnees du boule \\
+\hline
+{\em hole} & les donnees du hole \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_a8cb0a7d424399b7c912dd0ca0d8b0162}{\index{main.\-c@{main.\-c}!distance@{distance}}
+\index{distance@{distance}!main.c@{main.\-c}}
+\subsubsection[{distance}]{\setlength{\rightskip}{0pt plus 5cm}double distance (
+\begin{DoxyParamCaption}
+\item[{{\bf ball\-\_\-t} $\ast$}]{b1, }
+\item[{{\bf ball\-\_\-t} $\ast$}]{b2}
+\end{DoxyParamCaption}
+)}}\label{main_8c_a8cb0a7d424399b7c912dd0ca0d8b0162}
+
+
+La fonction qui calcule et renvoie la distance euclidienne entreles deux boulesb1etb2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b1} & les données du boule1 \\
+\hline
+{\em b2} & les données du boule2 \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_a947b9f8960b2202788f43c71fbaa9d67}{\index{main.\-c@{main.\-c}!handle\-\_\-events@{handle\-\_\-events}}
+\index{handle\-\_\-events@{handle\-\_\-events}!main.c@{main.\-c}}
+\subsubsection[{handle\-\_\-events}]{\setlength{\rightskip}{0pt plus 5cm}void handle\-\_\-events (
+\begin{DoxyParamCaption}
+\item[{S\-D\-L\-\_\-\-Event $\ast$}]{event, }
+\item[{{\bf world\-\_\-t} $\ast$}]{world}
+\end{DoxyParamCaption}
+)}}\label{main_8c_a947b9f8960b2202788f43c71fbaa9d67}
+
+
+La fonction qui trait les points des deux jouers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em world} & les données du monde La fonction gère les évènements ayant eu lieu et qui n'ont pas encore été traités \\
+\hline
+{\em event} & paramètre qui contient les événements \\
+\hline
+{\em world} & les données du monde \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_ac064b7eac876567c5e8549a061e41f65}{\index{main.\-c@{main.\-c}!ini\-\_\-boule\-\_\-blanche@{ini\-\_\-boule\-\_\-blanche}}
+\index{ini\-\_\-boule\-\_\-blanche@{ini\-\_\-boule\-\_\-blanche}!main.c@{main.\-c}}
+\subsubsection[{ini\-\_\-boule\-\_\-blanche}]{\setlength{\rightskip}{0pt plus 5cm}void ini\-\_\-boule\-\_\-blanche (
+\begin{DoxyParamCaption}
+\item[{{\bf world\-\_\-t} $\ast$}]{world}
+\end{DoxyParamCaption}
+)}}\label{main_8c_ac064b7eac876567c5e8549a061e41f65}
+
+
+La fonction initialise les données du boule blanche. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em world} & les données du monde \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_abdbe0e697198ffee20f93b5401f0c4af}{\index{main.\-c@{main.\-c}!ini\-\_\-boule\-\_\-couleur@{ini\-\_\-boule\-\_\-couleur}}
+\index{ini\-\_\-boule\-\_\-couleur@{ini\-\_\-boule\-\_\-couleur}!main.c@{main.\-c}}
+\subsubsection[{ini\-\_\-boule\-\_\-couleur}]{\setlength{\rightskip}{0pt plus 5cm}void ini\-\_\-boule\-\_\-couleur (
+\begin{DoxyParamCaption}
+\item[{{\bf world\-\_\-t} $\ast$}]{world}
+\end{DoxyParamCaption}
+)}}\label{main_8c_abdbe0e697198ffee20f93b5401f0c4af}
+
+
+La fonction initialise les données du boule couleur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em world} & les données du monde \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_aa79ee3db46d95c70109aee6531e8303a}{\index{main.\-c@{main.\-c}!ini\-\_\-trou@{ini\-\_\-trou}}
+\index{ini\-\_\-trou@{ini\-\_\-trou}!main.c@{main.\-c}}
+\subsubsection[{ini\-\_\-trou}]{\setlength{\rightskip}{0pt plus 5cm}void ini\-\_\-trou (
+\begin{DoxyParamCaption}
+\item[{{\bf hole\-\_\-t} $\ast$}]{hole, }
+\item[{double}]{x, }
+\item[{double}]{y}
+\end{DoxyParamCaption}
+)}}\label{main_8c_aa79ee3db46d95c70109aee6531e8303a}
+
+
+La fonction initialise les données du trou. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hole} & les données du hole, \\
+\hline
+{\em x} & les données qui va initialise dans la hole, \\
+\hline
+{\em y} & les données qui va initialise dans la hole, \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_a5676e72ded3c1a993c4c975ef9958288}{\index{main.\-c@{main.\-c}!init\-\_\-data@{init\-\_\-data}}
+\index{init\-\_\-data@{init\-\_\-data}!main.c@{main.\-c}}
+\subsubsection[{init\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}void init\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{{\bf world\-\_\-t} $\ast$}]{world}
+\end{DoxyParamCaption}
+)}}\label{main_8c_a5676e72ded3c1a993c4c975ef9958288}
+
+
+La fonction initialise les données du monde du jeu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em world} & les données du monde \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_a4791af5d8f61cf796f97f0ea6c2d67db}{\index{main.\-c@{main.\-c}!init\-\_\-graphics@{init\-\_\-graphics}}
+\index{init\-\_\-graphics@{init\-\_\-graphics}!main.c@{main.\-c}}
+\subsubsection[{init\-\_\-graphics}]{\setlength{\rightskip}{0pt plus 5cm}void init\-\_\-graphics (
+\begin{DoxyParamCaption}
+\item[{S\-D\-L\-\_\-\-Surface $\ast$}]{screen, }
+\item[{{\bf world\-\_\-t} $\ast$}]{world}
+\end{DoxyParamCaption}
+)}}\label{main_8c_a4791af5d8f61cf796f97f0ea6c2d67db}
+
+
+La fonction initialise les transparences des différentes surfaces. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em screen} & la surface correspondant à l'écran de jeu \\
+\hline
+{\em world} & les données du monde \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_a87c51ee2e71f0707b7c964afc414f556}{\index{main.\-c@{main.\-c}!is\-\_\-game\-\_\-over@{is\-\_\-game\-\_\-over}}
+\index{is\-\_\-game\-\_\-over@{is\-\_\-game\-\_\-over}!main.c@{main.\-c}}
+\subsubsection[{is\-\_\-game\-\_\-over}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-game\-\_\-over (
+\begin{DoxyParamCaption}
+\item[{{\bf world\-\_\-t} $\ast$}]{world}
+\end{DoxyParamCaption}
+)}}\label{main_8c_a87c51ee2e71f0707b7c964afc414f556}
+
+
+La fonction indique si le jeu est fini en fonction des données du monde. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em world} & les données du monde \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 si le jeu est fini, 0 sinon 
+\end{DoxyReturn}
+\hypertarget{main_8c_acf6aa8b4df15e32d435e49b11261bc0f}{\index{main.\-c@{main.\-c}!refresh\-\_\-graphics@{refresh\-\_\-graphics}}
+\index{refresh\-\_\-graphics@{refresh\-\_\-graphics}!main.c@{main.\-c}}
+\subsubsection[{refresh\-\_\-graphics}]{\setlength{\rightskip}{0pt plus 5cm}void refresh\-\_\-graphics (
+\begin{DoxyParamCaption}
+\item[{S\-D\-L\-\_\-\-Surface $\ast$}]{screen, }
+\item[{{\bf world\-\_\-t} $\ast$}]{world}
+\end{DoxyParamCaption}
+)}}\label{main_8c_acf6aa8b4df15e32d435e49b11261bc0f}
+
+
+La fonction rafrachit l'écran en fonction de l'état des données du monde. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em screen} & la surface de l'écran de jeu(world-\/$>$y+\-B\-A\-L\-L\-\_\-\-S\-I\-Z\-E/2) \\
+\hline
+{\em world} & les données du monde \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_af95d17d1f3064fadc022baf5289166b5}{\index{main.\-c@{main.\-c}!set\-\_\-pos@{set\-\_\-pos}}
+\index{set\-\_\-pos@{set\-\_\-pos}!main.c@{main.\-c}}
+\subsubsection[{set\-\_\-pos}]{\setlength{\rightskip}{0pt plus 5cm}void set\-\_\-pos (
+\begin{DoxyParamCaption}
+\item[{{\bf ball\-\_\-t} $\ast$}]{ball, }
+\item[{double}]{x, }
+\item[{double}]{y}
+\end{DoxyParamCaption}
+)}}\label{main_8c_af95d17d1f3064fadc022baf5289166b5}
+
+
+La fonction qui reposition de ball. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ball} & les donnees du boule \\
+\hline
+{\em x} & le abscisse du boule \\
+\hline
+{\em y} & l'ordonne du boule \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_aac729d006c26024c2149ce44cdebd88f}{\index{main.\-c@{main.\-c}!set\-\_\-position@{set\-\_\-position}}
+\index{set\-\_\-position@{set\-\_\-position}!main.c@{main.\-c}}
+\subsubsection[{set\-\_\-position}]{\setlength{\rightskip}{0pt plus 5cm}void set\-\_\-position (
+\begin{DoxyParamCaption}
+\item[{{\bf ball\-\_\-t} $\ast$}]{ball, }
+\item[{double}]{x, }
+\item[{double}]{y}
+\end{DoxyParamCaption}
+)}}\label{main_8c_aac729d006c26024c2149ce44cdebd88f}
+
+
+La fonction qui met a jour la position d’une bouleballavec les coordonnees (x,y) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ball} & les donnees du boule \\
+\hline
+{\em vx} & la position qui va mettre du boule \\
+\hline
+{\em vy} & la position qui va mettre du boule \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_ae97a638c7bbe1eeb3426c995fe0caed1}{\index{main.\-c@{main.\-c}!set\-\_\-position\-\_\-boules@{set\-\_\-position\-\_\-boules}}
+\index{set\-\_\-position\-\_\-boules@{set\-\_\-position\-\_\-boules}!main.c@{main.\-c}}
+\subsubsection[{set\-\_\-position\-\_\-boules}]{\setlength{\rightskip}{0pt plus 5cm}void set\-\_\-position\-\_\-boules (
+\begin{DoxyParamCaption}
+\item[{{\bf world\-\_\-t} $\ast$}]{world}
+\end{DoxyParamCaption}
+)}}\label{main_8c_ae97a638c7bbe1eeb3426c995fe0caed1}
+
+
+La fonction set position apply a les boules. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em world} & les données du monde \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_afe0c9238f37d4107d0869ccd5bb23a5b}{\index{main.\-c@{main.\-c}!set\-\_\-speed@{set\-\_\-speed}}
+\index{set\-\_\-speed@{set\-\_\-speed}!main.c@{main.\-c}}
+\subsubsection[{set\-\_\-speed}]{\setlength{\rightskip}{0pt plus 5cm}void set\-\_\-speed (
+\begin{DoxyParamCaption}
+\item[{{\bf ball\-\_\-t} $\ast$}]{ball, }
+\item[{double}]{vx, }
+\item[{double}]{vy}
+\end{DoxyParamCaption}
+)}}\label{main_8c_afe0c9238f37d4107d0869ccd5bb23a5b}
+
+
+La fonction qui met a jour la vitesse d’une boule ball avec les valeurs vx et vy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ball} & les donnees du boule \\
+\hline
+{\em vx} & la V\-I\-T\-E\-S\-S qui va mettre du boule \\
+\hline
+{\em vy} & la V\-I\-T\-E\-S\-S qui va mettre du boule \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_a58ae897404d8fb2fef143eab4b26e590}{\index{main.\-c@{main.\-c}!set\-\_\-speed\-\_\-boules@{set\-\_\-speed\-\_\-boules}}
+\index{set\-\_\-speed\-\_\-boules@{set\-\_\-speed\-\_\-boules}!main.c@{main.\-c}}
+\subsubsection[{set\-\_\-speed\-\_\-boules}]{\setlength{\rightskip}{0pt plus 5cm}void set\-\_\-speed\-\_\-boules (
+\begin{DoxyParamCaption}
+\item[{{\bf world\-\_\-t} $\ast$}]{world}
+\end{DoxyParamCaption}
+)}}\label{main_8c_a58ae897404d8fb2fef143eab4b26e590}
+
+
+La fonction set speed apply a les boules. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em world} & les données du monde \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_a04e388214ede7985295c807f4418f18c}{\index{main.\-c@{main.\-c}!tomb\-\_\-trou@{tomb\-\_\-trou}}
+\index{tomb\-\_\-trou@{tomb\-\_\-trou}!main.c@{main.\-c}}
+\subsubsection[{tomb\-\_\-trou}]{\setlength{\rightskip}{0pt plus 5cm}int tomb\-\_\-trou (
+\begin{DoxyParamCaption}
+\item[{{\bf ball\-\_\-t} $\ast$}]{b1, }
+\item[{{\bf hole\-\_\-t} $\ast$}]{hole}
+\end{DoxyParamCaption}
+)}}\label{main_8c_a04e388214ede7985295c807f4418f18c}
+
+
+La fonction qui renvoie 1 si une boule tombe dans un trou donn ́e en param`etres, 0 sinon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ball} & les donnees du boule \\
+\hline
+{\em hole} & les donnees du hole \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_a09aefa03131f30d5a8390c0d7929d1f7}{\index{main.\-c@{main.\-c}!touche@{touche}}
+\index{touche@{touche}!main.c@{main.\-c}}
+\subsubsection[{touche}]{\setlength{\rightskip}{0pt plus 5cm}int touche (
+\begin{DoxyParamCaption}
+\item[{{\bf ball\-\_\-t} $\ast$}]{b1, }
+\item[{{\bf ball\-\_\-t} $\ast$}]{b2}
+\end{DoxyParamCaption}
+)}}\label{main_8c_a09aefa03131f30d5a8390c0d7929d1f7}
+
+
+La fonction qui prend comme parametres deux boules et renvoie 1 si elles se touchent, 0 sinon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b1} & les données du boule1 \\
+\hline
+{\em b2} & les données du boule2 \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_afddedc15b607bb3962aaf80d13083652}{\index{main.\-c@{main.\-c}!touche\-\_\-collision@{touche\-\_\-collision}}
+\index{touche\-\_\-collision@{touche\-\_\-collision}!main.c@{main.\-c}}
+\subsubsection[{touche\-\_\-collision}]{\setlength{\rightskip}{0pt plus 5cm}void touche\-\_\-collision (
+\begin{DoxyParamCaption}
+\item[{{\bf ball\-\_\-t} $\ast$}]{b1, }
+\item[{{\bf ball\-\_\-t} $\ast$}]{b2}
+\end{DoxyParamCaption}
+)}}\label{main_8c_afddedc15b607bb3962aaf80d13083652}
+
+
+La fonction quand les boules rencontrent, elle collision. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b1} & les données du boule1 \\
+\hline
+{\em b2} & les données du boule2 \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_a4eaef051377ec3d265137a0c0d250b1e}{\index{main.\-c@{main.\-c}!touche\-\_\-collision\-\_\-boules@{touche\-\_\-collision\-\_\-boules}}
+\index{touche\-\_\-collision\-\_\-boules@{touche\-\_\-collision\-\_\-boules}!main.c@{main.\-c}}
+\subsubsection[{touche\-\_\-collision\-\_\-boules}]{\setlength{\rightskip}{0pt plus 5cm}void touche\-\_\-collision\-\_\-boules (
+\begin{DoxyParamCaption}
+\item[{{\bf world\-\_\-t} $\ast$}]{world}
+\end{DoxyParamCaption}
+)}}\label{main_8c_a4eaef051377ec3d265137a0c0d250b1e}
+
+
+La fonction collision apply a les boules. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em world} & les données du monde \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_a8a36e1fd74c3155a475710c717d38d8a}{\index{main.\-c@{main.\-c}!touche\-\_\-reposition@{touche\-\_\-reposition}}
+\index{touche\-\_\-reposition@{touche\-\_\-reposition}!main.c@{main.\-c}}
+\subsubsection[{touche\-\_\-reposition}]{\setlength{\rightskip}{0pt plus 5cm}void touche\-\_\-reposition (
+\begin{DoxyParamCaption}
+\item[{{\bf ball\-\_\-t} $\ast$}]{b1, }
+\item[{{\bf ball\-\_\-t} $\ast$}]{b2}
+\end{DoxyParamCaption}
+)}}\label{main_8c_a8a36e1fd74c3155a475710c717d38d8a}
+
+
+La fonction quand la boule blanche rencontre trop inférieur la boule de couleur, elle reposition. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b1} & les données du boule1 \\
+\hline
+{\em b2} & les données du boule2 \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_a77c56b56cd62e1bfa2ae1393aafa2db8}{\index{main.\-c@{main.\-c}!touche\-\_\-reposition\-\_\-boules@{touche\-\_\-reposition\-\_\-boules}}
+\index{touche\-\_\-reposition\-\_\-boules@{touche\-\_\-reposition\-\_\-boules}!main.c@{main.\-c}}
+\subsubsection[{touche\-\_\-reposition\-\_\-boules}]{\setlength{\rightskip}{0pt plus 5cm}void touche\-\_\-reposition\-\_\-boules (
+\begin{DoxyParamCaption}
+\item[{{\bf world\-\_\-t} $\ast$}]{world}
+\end{DoxyParamCaption}
+)}}\label{main_8c_a77c56b56cd62e1bfa2ae1393aafa2db8}
+
+
+La fonction touche reposition apply a les boules. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em world} & les données du monde \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_abeaef4053c9db5bf10e2d071462b7ec9}{\index{main.\-c@{main.\-c}!touche\-\_\-trop\-\_\-inferieur@{touche\-\_\-trop\-\_\-inferieur}}
+\index{touche\-\_\-trop\-\_\-inferieur@{touche\-\_\-trop\-\_\-inferieur}!main.c@{main.\-c}}
+\subsubsection[{touche\-\_\-trop\-\_\-inferieur}]{\setlength{\rightskip}{0pt plus 5cm}int touche\-\_\-trop\-\_\-inferieur (
+\begin{DoxyParamCaption}
+\item[{{\bf ball\-\_\-t} $\ast$}]{b1, }
+\item[{{\bf ball\-\_\-t} $\ast$}]{b2}
+\end{DoxyParamCaption}
+)}}\label{main_8c_abeaef4053c9db5bf10e2d071462b7ec9}
+
+
+La fonction qui prend comme parametres deux boules et ren\-H\-O\-L\-E\-\_\-\-R\-A\-D\-I\-U\-S+\-B\-A\-L\-L\-\_\-\-S\-I\-Z\-E/2voie 1 si elles se touchent mais trop inferieur, 0 sinon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b1} & les données du boule1 \\
+\hline
+{\em b2} & les données du boule2 \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_a6c91f82a5ece8b14628159353390adf4}{\index{main.\-c@{main.\-c}!update\-\_\-data@{update\-\_\-data}}
+\index{update\-\_\-data@{update\-\_\-data}!main.c@{main.\-c}}
+\subsubsection[{update\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}void update\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{{\bf world\-\_\-t} $\ast$}]{world}
+\end{DoxyParamCaption}
+)}}\label{main_8c_a6c91f82a5ece8b14628159353390adf4}
+
+
+La fonction met à jour les données en tenant compte de la physique du monde. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em les} & données du monde \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_af655233287f1cffc04748834ee06b333}{\index{main.\-c@{main.\-c}!update\-\_\-data\-\_\-boule@{update\-\_\-data\-\_\-boule}}
+\index{update\-\_\-data\-\_\-boule@{update\-\_\-data\-\_\-boule}!main.c@{main.\-c}}
+\subsubsection[{update\-\_\-data\-\_\-boule}]{\setlength{\rightskip}{0pt plus 5cm}void update\-\_\-data\-\_\-boule (
+\begin{DoxyParamCaption}
+\item[{{\bf world\-\_\-t} $\ast$}]{world}
+\end{DoxyParamCaption}
+)}}\label{main_8c_af655233287f1cffc04748834ee06b333}
+
+
+La fonction met à jour les données en tenant compte de la physique du monde du boule ensembles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em world} & les données du monde \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Variable Documentation}
+\hypertarget{main_8c_a4aa91edf9d5669a1d0c36e0950962aaf}{\index{main.\-c@{main.\-c}!som1@{som1}}
+\index{som1@{som1}!main.c@{main.\-c}}
+\subsubsection[{som1}]{\setlength{\rightskip}{0pt plus 5cm}int som1 =0}}\label{main_8c_a4aa91edf9d5669a1d0c36e0950962aaf}
+
+
+Représentation du monde du jeu. 
+
+initialise gobal de ordonne dans la point de jeu 

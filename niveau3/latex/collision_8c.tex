@@ -1,0 +1,92 @@
+\hypertarget{collision_8c}{\section{collision.\-c File Reference}
+\label{collision_8c}\index{collision.\-c@{collision.\-c}}
+}
+
+
+module de gestion des collisions  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{collision_8c_aee42b83ac97fedd52980b6934bff7c0b}{dot\-\_\-product} (double x1, double y1, double x2, double y2)
+\begin{DoxyCompactList}\small\item\em calcule le produit scalaire de deux vecteurs V1 et V2 \end{DoxyCompactList}\item 
+void \hyperlink{collision_8c_a34577738851c9aa40fffe8b53898cad5}{collision} (double x1, double y1, double $\ast$vx1, double $\ast$vy1, double x2, double y2, double $\ast$vx2, double $\ast$vy2)
+\begin{DoxyCompactList}\small\item\em modifie les vitesses de deux boules B1 et B2, après collision \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+module de gestion des collisions \begin{DoxyAuthor}{Author}
+Clément Beysson 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+5 avril 2019 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\hypertarget{collision_8c_a34577738851c9aa40fffe8b53898cad5}{\index{collision.\-c@{collision.\-c}!collision@{collision}}
+\index{collision@{collision}!collision.c@{collision.\-c}}
+\subsubsection[{collision}]{\setlength{\rightskip}{0pt plus 5cm}void collision (
+\begin{DoxyParamCaption}
+\item[{double}]{x1, }
+\item[{double}]{y1, }
+\item[{double $\ast$}]{vx1, }
+\item[{double $\ast$}]{vy1, }
+\item[{double}]{x2, }
+\item[{double}]{y2, }
+\item[{double $\ast$}]{vx2, }
+\item[{double $\ast$}]{vy2}
+\end{DoxyParamCaption}
+)}}\label{collision_8c_a34577738851c9aa40fffe8b53898cad5}
+
+
+modifie les vitesses de deux boules B1 et B2, après collision 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & abscisse de B1 au moment de la collision \\
+\hline
+{\em y1} & ordonnée de B1 au moment de la collision \\
+\hline
+{\em v1x} & adresse de la vitesse horizontale de B1 \\
+\hline
+{\em v1y} & adresse de la vitesse verticale de B1 \\
+\hline
+{\em x2} & abscisse de B2 au moment de la collision \\
+\hline
+{\em y2} & ordonnée de B2 au moment de la collision \\
+\hline
+{\em v2x} & adresse de la vitesse horizontale de B2 \\
+\hline
+{\em v2y} & adresse de la vitesse verticale de B2 \\
+\hline
+\end{DoxyParams}
+\hypertarget{collision_8c_aee42b83ac97fedd52980b6934bff7c0b}{\index{collision.\-c@{collision.\-c}!dot\-\_\-product@{dot\-\_\-product}}
+\index{dot\-\_\-product@{dot\-\_\-product}!collision.c@{collision.\-c}}
+\subsubsection[{dot\-\_\-product}]{\setlength{\rightskip}{0pt plus 5cm}double dot\-\_\-product (
+\begin{DoxyParamCaption}
+\item[{double}]{x1, }
+\item[{double}]{y1, }
+\item[{double}]{x2, }
+\item[{double}]{y2}
+\end{DoxyParamCaption}
+)}}\label{collision_8c_aee42b83ac97fedd52980b6934bff7c0b}
+
+
+calcule le produit scalaire de deux vecteurs V1 et V2 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & abscisse de V1 \\
+\hline
+{\em y1} & ordonnée de V1 \\
+\hline
+{\em x2} & abscisse de V2 \\
+\hline
+{\em y2} & ordonnée de V2 \\
+\hline
+\end{DoxyParams}

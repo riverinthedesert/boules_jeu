@@ -1,0 +1,190 @@
+\hypertarget{sdl-light_8c}{\section{sdl-\/light.c File Reference}
+\label{sdl-light_8c}\index{sdl-\/light.\-c@{sdl-\/light.\-c}}
+}
+
+
+sur-\/couche de S\-D\-L pour simplifier son utilisation pour le projet  
+
+
+{\ttfamily \#include \char`\"{}sdl-\/light.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+S\-D\-L\-\_\-\-Surface $\ast$ \hyperlink{sdl-light_8c_a606ffc02c9374de366ba686f61fab06f}{init\-\_\-sdl} (int width, int height)
+\begin{DoxyCompactList}\small\item\em La fonction initialise la S\-D\-L. Elle crée et renvoie la surface correspondant à l'écran du jeu. \end{DoxyCompactList}\item 
+\hypertarget{sdl-light_8c_a3c815eb0d82fcbe817c8f5a6ff7dda41}{void \hyperlink{sdl-light_8c_a3c815eb0d82fcbe817c8f5a6ff7dda41}{quit\-\_\-sdl} ()}\label{sdl-light_8c_a3c815eb0d82fcbe817c8f5a6ff7dda41}
+
+\begin{DoxyCompactList}\small\item\em La fonction permet de quitter la S\-D\-L en supprimant notamment la surface correspondant à l'écran de jeu. \end{DoxyCompactList}\item 
+S\-D\-L\-\_\-\-Surface $\ast$ \hyperlink{sdl-light_8c_a2a4087096c2f6d728844c4c2549bbc5f}{load\-\_\-image} (char path\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em La fonction charge une image et renvoie la surface S\-D\-L optimisée correspondante. \end{DoxyCompactList}\item 
+void \hyperlink{sdl-light_8c_a3b6e9c408f9273f7d39bd968df780c80}{apply\-\_\-surface} (S\-D\-L\-\_\-\-Surface $\ast$surf, S\-D\-L\-\_\-\-Surface $\ast$screen, int x, int y)
+\begin{DoxyCompactList}\small\item\em La fonction permet d'appliquer une surface S\-D\-L sur une autre surface à une position donnée. \end{DoxyCompactList}\item 
+void \hyperlink{sdl-light_8c_a32dbad4e4512e3b99f67c7a5c0d47fe4}{apply\-\_\-sub\-\_\-surface} (S\-D\-L\-\_\-\-Surface $\ast$surf, S\-D\-L\-\_\-\-Surface $\ast$screen, int subposx, int subposy, int subwidth, int subheight, int posx, int posy)
+\begin{DoxyCompactList}\small\item\em La fonction applique une zone d'une surface sur une autre surface à une position donnée. La zone à appliquer est définie par un rectangle sur la surface au moyen des coordonnées du point en haut à gauche du rectangle, de la largeur et de la hauteur du rectangle. \end{DoxyCompactList}\item 
+void \hyperlink{sdl-light_8c_a95dec76d1425f27dfcaf620522ade661}{refresh\-\_\-surface} (S\-D\-L\-\_\-\-Surface $\ast$surf)
+\begin{DoxyCompactList}\small\item\em La fonction rafraichit une surface S\-D\-L. \end{DoxyCompactList}\item 
+void \hyperlink{sdl-light_8c_acd278b0336928f80ecb69a04b5f86df8}{set\-\_\-transparence} (S\-D\-L\-\_\-\-Surface $\ast$screen, S\-D\-L\-\_\-\-Surface $\ast$surf, int r, int g, int b)
+\begin{DoxyCompactList}\small\item\em La fonction applique la transparence à une surface S\-D\-L pour une certaine couleur codée en R\-G\-B. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+sur-\/couche de S\-D\-L pour simplifier son utilisation pour le projet \begin{DoxyAuthor}{Author}
+Mathieu Constant 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\-1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+13 mars 2019 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\hypertarget{sdl-light_8c_a32dbad4e4512e3b99f67c7a5c0d47fe4}{\index{sdl-\/light.\-c@{sdl-\/light.\-c}!apply\-\_\-sub\-\_\-surface@{apply\-\_\-sub\-\_\-surface}}
+\index{apply\-\_\-sub\-\_\-surface@{apply\-\_\-sub\-\_\-surface}!sdl-light.c@{sdl-\/light.\-c}}
+\subsubsection[{apply\-\_\-sub\-\_\-surface}]{\setlength{\rightskip}{0pt plus 5cm}void apply\-\_\-sub\-\_\-surface (
+\begin{DoxyParamCaption}
+\item[{S\-D\-L\-\_\-\-Surface $\ast$}]{surf, }
+\item[{S\-D\-L\-\_\-\-Surface $\ast$}]{screen, }
+\item[{int}]{subposx, }
+\item[{int}]{subposy, }
+\item[{int}]{subwidth, }
+\item[{int}]{subheight, }
+\item[{int}]{posx, }
+\item[{int}]{posy}
+\end{DoxyParamCaption}
+)}}\label{sdl-light_8c_a32dbad4e4512e3b99f67c7a5c0d47fe4}
+
+
+La fonction applique une zone d'une surface sur une autre surface à une position donnée. La zone à appliquer est définie par un rectangle sur la surface au moyen des coordonnées du point en haut à gauche du rectangle, de la largeur et de la hauteur du rectangle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em surf} & la surface S\-D\-L dont on va appliquer une zone sur l'autre surface \\
+\hline
+{\em screen} & la surface qui va recevoir une zone de l'autre surface \\
+\hline
+{\em subposx} & l'absisse sur la surface surf du point en haut à gauche du rectangle définissant la zone à appliquer \\
+\hline
+{\em subposy} & l'ordonnée sur la surface surf du point en haut à gauche du rectangle définissant la zone à appliquer \\
+\hline
+{\em subwidth} & la largeur de la zone à appliquer \\
+\hline
+{\em subheight} & la hauteur de la zone à appliquer \\
+\hline
+{\em posx} & l'abscisse sur screen de l'endroit où appliquer la zone \\
+\hline
+{\em posy} & l'ordonnée sur screen de l'endroit où appliquer la zone \\
+\hline
+\end{DoxyParams}
+\hypertarget{sdl-light_8c_a3b6e9c408f9273f7d39bd968df780c80}{\index{sdl-\/light.\-c@{sdl-\/light.\-c}!apply\-\_\-surface@{apply\-\_\-surface}}
+\index{apply\-\_\-surface@{apply\-\_\-surface}!sdl-light.c@{sdl-\/light.\-c}}
+\subsubsection[{apply\-\_\-surface}]{\setlength{\rightskip}{0pt plus 5cm}void apply\-\_\-surface (
+\begin{DoxyParamCaption}
+\item[{S\-D\-L\-\_\-\-Surface $\ast$}]{surf, }
+\item[{S\-D\-L\-\_\-\-Surface $\ast$}]{screen, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}}\label{sdl-light_8c_a3b6e9c408f9273f7d39bd968df780c80}
+
+
+La fonction permet d'appliquer une surface S\-D\-L sur une autre surface à une position donnée. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em surf} & la surface que l'on va appliquer \\
+\hline
+{\em screen} & la surface (souvent l'écran de jeu) qui va recevoir l'autre surface \\
+\hline
+{\em x} & l'abscisse sur screen de l'endroit où est appliquée surf (point en haut à gauche de la surface) \\
+\hline
+{\em y} & l'ordonnée sur screen de l'endroit où est appliquée surf (point en haut à gauche de la surface) \\
+\hline
+\end{DoxyParams}
+\hypertarget{sdl-light_8c_a606ffc02c9374de366ba686f61fab06f}{\index{sdl-\/light.\-c@{sdl-\/light.\-c}!init\-\_\-sdl@{init\-\_\-sdl}}
+\index{init\-\_\-sdl@{init\-\_\-sdl}!sdl-light.c@{sdl-\/light.\-c}}
+\subsubsection[{init\-\_\-sdl}]{\setlength{\rightskip}{0pt plus 5cm}S\-D\-L\-\_\-\-Surface$\ast$ init\-\_\-sdl (
+\begin{DoxyParamCaption}
+\item[{int}]{width, }
+\item[{int}]{height}
+\end{DoxyParamCaption}
+)}}\label{sdl-light_8c_a606ffc02c9374de366ba686f61fab06f}
+
+
+La fonction initialise la S\-D\-L. Elle crée et renvoie la surface correspondant à l'écran du jeu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & largeur de l'écran de jeu \\
+\hline
+{\em height} & hauteur de l'écran de jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+la surface S\-D\-L correspondant à l'écran de jeu 
+\end{DoxyReturn}
+\hypertarget{sdl-light_8c_a2a4087096c2f6d728844c4c2549bbc5f}{\index{sdl-\/light.\-c@{sdl-\/light.\-c}!load\-\_\-image@{load\-\_\-image}}
+\index{load\-\_\-image@{load\-\_\-image}!sdl-light.c@{sdl-\/light.\-c}}
+\subsubsection[{load\-\_\-image}]{\setlength{\rightskip}{0pt plus 5cm}S\-D\-L\-\_\-\-Surface$\ast$ load\-\_\-image (
+\begin{DoxyParamCaption}
+\item[{char}]{path\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{sdl-light_8c_a2a4087096c2f6d728844c4c2549bbc5f}
+
+
+La fonction charge une image et renvoie la surface S\-D\-L optimisée correspondante. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & est le chemin du fichier image. Le fichier doit être obligatoirement du B\-M\-P. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+la surface S\-D\-L contenant l'image. Elle renvoie N\-U\-L\-L si le chargement a échoué (ex. le fichier path n'existe pas) 
+\end{DoxyReturn}
+\hypertarget{sdl-light_8c_a95dec76d1425f27dfcaf620522ade661}{\index{sdl-\/light.\-c@{sdl-\/light.\-c}!refresh\-\_\-surface@{refresh\-\_\-surface}}
+\index{refresh\-\_\-surface@{refresh\-\_\-surface}!sdl-light.c@{sdl-\/light.\-c}}
+\subsubsection[{refresh\-\_\-surface}]{\setlength{\rightskip}{0pt plus 5cm}void refresh\-\_\-surface (
+\begin{DoxyParamCaption}
+\item[{S\-D\-L\-\_\-\-Surface $\ast$}]{surf}
+\end{DoxyParamCaption}
+)}}\label{sdl-light_8c_a95dec76d1425f27dfcaf620522ade661}
+
+
+La fonction rafraichit une surface S\-D\-L. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em surf} & la surface S\-D\-L à rafraichir \\
+\hline
+\end{DoxyParams}
+\hypertarget{sdl-light_8c_acd278b0336928f80ecb69a04b5f86df8}{\index{sdl-\/light.\-c@{sdl-\/light.\-c}!set\-\_\-transparence@{set\-\_\-transparence}}
+\index{set\-\_\-transparence@{set\-\_\-transparence}!sdl-light.c@{sdl-\/light.\-c}}
+\subsubsection[{set\-\_\-transparence}]{\setlength{\rightskip}{0pt plus 5cm}void set\-\_\-transparence (
+\begin{DoxyParamCaption}
+\item[{S\-D\-L\-\_\-\-Surface $\ast$}]{screen, }
+\item[{S\-D\-L\-\_\-\-Surface $\ast$}]{surf, }
+\item[{int}]{r, }
+\item[{int}]{g, }
+\item[{int}]{b}
+\end{DoxyParamCaption}
+)}}\label{sdl-light_8c_acd278b0336928f80ecb69a04b5f86df8}
+
+
+La fonction applique la transparence à une surface S\-D\-L pour une certaine couleur codée en R\-G\-B. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em screen} & surface correspondant à l'écran de jeu \\
+\hline
+{\em surf} & surface sur laquelle on va appliquer la transparence \\
+\hline
+{\em r} & la valeur R\-E\-D du code R\-G\-B correspondant à la couleur que l'on veut rendre transparente sur la surface surf \\
+\hline
+{\em g} & la valeur G\-R\-E\-E\-N du code R\-G\-B correspondant à la couleur que l'on veut rendre transparente sur la surface surf \\
+\hline
+{\em b} & la valeur B\-L\-U\-E du code R\-G\-B correspondant à la couleur que l'on veut rendre transparente sur la surface surf \\
+\hline
+\end{DoxyParams}

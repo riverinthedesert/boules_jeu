@@ -1,0 +1,227 @@
+\hypertarget{main_8c}{\section{main.\-c File Reference}
+\label{main_8c}\index{main.\-c@{main.\-c}}
+}
+
+
+Programme principal du niveau 0, à compléter.  
+
+
+{\ttfamily \#include \char`\"{}sdl-\/light.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structworld__s}{world\-\_\-s}
+\begin{DoxyCompactList}\small\item\em Représentation du monde du jeu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{main_8c_a2cd109632a6dcccaa80b43561b1ab700}{\#define \hyperlink{main_8c_a2cd109632a6dcccaa80b43561b1ab700}{S\-C\-R\-E\-E\-N\-\_\-\-W\-I\-D\-T\-H}~640}\label{main_8c_a2cd109632a6dcccaa80b43561b1ab700}
+
+\begin{DoxyCompactList}\small\item\em Largeur de l'écran de jeu. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a6974d08a74da681b3957b2fead2608b8}{\#define \hyperlink{main_8c_a6974d08a74da681b3957b2fead2608b8}{S\-C\-R\-E\-E\-N\-\_\-\-H\-E\-I\-G\-H\-T}~480}\label{main_8c_a6974d08a74da681b3957b2fead2608b8}
+
+\begin{DoxyCompactList}\small\item\em Hauteur de l'écran de jeu. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a4914b107d04df496be32f61e4b7a7295}{\#define \hyperlink{main_8c_a4914b107d04df496be32f61e4b7a7295}{B\-U\-B\-\_\-\-S\-I\-Z\-E}~40}\label{main_8c_a4914b107d04df496be32f61e4b7a7295}
+
+\begin{DoxyCompactList}\small\item\em Taille d'une bulle. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_ae3611cd7caad34521610ef1f7c116772}{\#define \hyperlink{main_8c_ae3611cd7caad34521610ef1f7c116772}{S\-P\-R\-I\-T\-E\-\_\-\-S\-I\-Z\-E}~32}\label{main_8c_ae3611cd7caad34521610ef1f7c116772}
+
+\begin{DoxyCompactList}\small\item\em Taille du bonhomme (sprite) \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a6e4e97e254aea2f3cb37e3d92dd5e26d}{\#define \hyperlink{main_8c_a6e4e97e254aea2f3cb37e3d92dd5e26d}{M\-O\-V\-I\-N\-G\-\_\-\-S\-T\-E\-P}~5}\label{main_8c_a6e4e97e254aea2f3cb37e3d92dd5e26d}
+
+\begin{DoxyCompactList}\small\item\em Pas de déplacement du sprite. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_ab0734fe9259b4ca8fbc6d3739dc2aeb6}{\#define {\bfseries W\-I\-N\-D\-\_\-\-V\-X}~1}\label{main_8c_ab0734fe9259b4ca8fbc6d3739dc2aeb6}
+
+\item 
+\hypertarget{main_8c_a379bfb7a43d96633ea1f8a341ca0c88b}{\#define {\bfseries V\-X\-\_\-\-B\-U\-B}~150}\label{main_8c_a379bfb7a43d96633ea1f8a341ca0c88b}
+
+\item 
+\hypertarget{main_8c_a5d53a4d9f875e7a04d0152d2ca4e8852}{\#define {\bfseries V\-Y\-\_\-\-B\-U\-B}~100}\label{main_8c_a5d53a4d9f875e7a04d0152d2ca4e8852}
+
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{main_8c_ad55869c5e54f717062ec699d20fa8886}{typedef struct \hyperlink{structworld__s}{world\-\_\-s} {\bfseries world\-\_\-t}}\label{main_8c_ad55869c5e54f717062ec699d20fa8886}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{main_8c_a5676e72ded3c1a993c4c975ef9958288}{init\-\_\-data} (\hyperlink{structworld__s}{world\-\_\-t} $\ast$world)
+\begin{DoxyCompactList}\small\item\em La fonction initialise les données du monde du jeu. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_abcbee1dbb5697f9d0de3f737f9c7aafe}{clean\-\_\-data} (\hyperlink{structworld__s}{world\-\_\-t} $\ast$world)
+\begin{DoxyCompactList}\small\item\em La fonction nettoie les données du monde. \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_a87c51ee2e71f0707b7c964afc414f556}{is\-\_\-game\-\_\-over} (\hyperlink{structworld__s}{world\-\_\-t} $\ast$world)
+\begin{DoxyCompactList}\small\item\em La fonction indique si le jeu est fini en fonction des données du monde. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a6c91f82a5ece8b14628159353390adf4}{update\-\_\-data} (\hyperlink{structworld__s}{world\-\_\-t} $\ast$world)
+\begin{DoxyCompactList}\small\item\em La fonction met à jour les données en tenant compte de la physique du monde. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a4791af5d8f61cf796f97f0ea6c2d67db}{init\-\_\-graphics} (S\-D\-L\-\_\-\-Surface $\ast$screen, \hyperlink{structworld__s}{world\-\_\-t} $\ast$world)
+\begin{DoxyCompactList}\small\item\em La fonction initialise les transparences des différentes surfaces. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a5eeb597ac0ac8e06a1fc61dc19c6a4da}{apply\-\_\-background} (S\-D\-L\-\_\-\-Surface $\ast$bg, S\-D\-L\-\_\-\-Surface $\ast$screen)
+\begin{DoxyCompactList}\small\item\em La fonction applique la surface de l'image de fond à quatre positions différentes sur l'écran de jeu, de sorte de complètement couvrir ce dernier. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_acf6aa8b4df15e32d435e49b11261bc0f}{refresh\-\_\-graphics} (S\-D\-L\-\_\-\-Surface $\ast$screen, \hyperlink{structworld__s}{world\-\_\-t} $\ast$world)
+\begin{DoxyCompactList}\small\item\em La fonction rafrachit l'écran en fonction de l'état des données du monde. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a947b9f8960b2202788f43c71fbaa9d67}{handle\-\_\-events} (S\-D\-L\-\_\-\-Event $\ast$event, \hyperlink{structworld__s}{world\-\_\-t} $\ast$world)
+\begin{DoxyCompactList}\small\item\em La fonction gère les évènements ayant eu lieu et qui n'ont pas encore été traités. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a700a0caa5b70a06d1064e576f9f3cf65}{int \hyperlink{main_8c_a700a0caa5b70a06d1064e576f9f3cf65}{main} (int argc, char $\ast$args\mbox{[}$\,$\mbox{]})}\label{main_8c_a700a0caa5b70a06d1064e576f9f3cf65}
+
+\begin{DoxyCompactList}\small\item\em programme principal qui implémente la boucle du jeu \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Programme principal du niveau 0, à compléter. \begin{DoxyAuthor}{Author}
+Mathieu Constant 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\-1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+13 mars 2019 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\hypertarget{main_8c_a5eeb597ac0ac8e06a1fc61dc19c6a4da}{\index{main.\-c@{main.\-c}!apply\-\_\-background@{apply\-\_\-background}}
+\index{apply\-\_\-background@{apply\-\_\-background}!main.c@{main.\-c}}
+\subsubsection[{apply\-\_\-background}]{\setlength{\rightskip}{0pt plus 5cm}void apply\-\_\-background (
+\begin{DoxyParamCaption}
+\item[{S\-D\-L\-\_\-\-Surface $\ast$}]{bg, }
+\item[{S\-D\-L\-\_\-\-Surface $\ast$}]{screen}
+\end{DoxyParamCaption}
+)}}\label{main_8c_a5eeb597ac0ac8e06a1fc61dc19c6a4da}
+
+
+La fonction applique la surface de l'image de fond à quatre positions différentes sur l'écran de jeu, de sorte de complètement couvrir ce dernier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em screen} & l'écran de jeu \\
+\hline
+{\em bg} & la surface de l'image de fond \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_abcbee1dbb5697f9d0de3f737f9c7aafe}{\index{main.\-c@{main.\-c}!clean\-\_\-data@{clean\-\_\-data}}
+\index{clean\-\_\-data@{clean\-\_\-data}!main.c@{main.\-c}}
+\subsubsection[{clean\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}void clean\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{{\bf world\-\_\-t} $\ast$}]{world}
+\end{DoxyParamCaption}
+)}}\label{main_8c_abcbee1dbb5697f9d0de3f737f9c7aafe}
+
+
+La fonction nettoie les données du monde. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em world} & les données du monde \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_a947b9f8960b2202788f43c71fbaa9d67}{\index{main.\-c@{main.\-c}!handle\-\_\-events@{handle\-\_\-events}}
+\index{handle\-\_\-events@{handle\-\_\-events}!main.c@{main.\-c}}
+\subsubsection[{handle\-\_\-events}]{\setlength{\rightskip}{0pt plus 5cm}void handle\-\_\-events (
+\begin{DoxyParamCaption}
+\item[{S\-D\-L\-\_\-\-Event $\ast$}]{event, }
+\item[{{\bf world\-\_\-t} $\ast$}]{world}
+\end{DoxyParamCaption}
+)}}\label{main_8c_a947b9f8960b2202788f43c71fbaa9d67}
+
+
+La fonction gère les évènements ayant eu lieu et qui n'ont pas encore été traités. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & paramètre qui contient les événements \\
+\hline
+{\em world} & les données du monde \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_a5676e72ded3c1a993c4c975ef9958288}{\index{main.\-c@{main.\-c}!init\-\_\-data@{init\-\_\-data}}
+\index{init\-\_\-data@{init\-\_\-data}!main.c@{main.\-c}}
+\subsubsection[{init\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}void init\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{{\bf world\-\_\-t} $\ast$}]{world}
+\end{DoxyParamCaption}
+)}}\label{main_8c_a5676e72ded3c1a993c4c975ef9958288}
+
+
+La fonction initialise les données du monde du jeu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em world} & les données du monde \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_a4791af5d8f61cf796f97f0ea6c2d67db}{\index{main.\-c@{main.\-c}!init\-\_\-graphics@{init\-\_\-graphics}}
+\index{init\-\_\-graphics@{init\-\_\-graphics}!main.c@{main.\-c}}
+\subsubsection[{init\-\_\-graphics}]{\setlength{\rightskip}{0pt plus 5cm}void init\-\_\-graphics (
+\begin{DoxyParamCaption}
+\item[{S\-D\-L\-\_\-\-Surface $\ast$}]{screen, }
+\item[{{\bf world\-\_\-t} $\ast$}]{world}
+\end{DoxyParamCaption}
+)}}\label{main_8c_a4791af5d8f61cf796f97f0ea6c2d67db}
+
+
+La fonction initialise les transparences des différentes surfaces. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em screen} & la surface correspondant à l'écran de jeu \\
+\hline
+{\em world} & les données du monde \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_a87c51ee2e71f0707b7c964afc414f556}{\index{main.\-c@{main.\-c}!is\-\_\-game\-\_\-over@{is\-\_\-game\-\_\-over}}
+\index{is\-\_\-game\-\_\-over@{is\-\_\-game\-\_\-over}!main.c@{main.\-c}}
+\subsubsection[{is\-\_\-game\-\_\-over}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-game\-\_\-over (
+\begin{DoxyParamCaption}
+\item[{{\bf world\-\_\-t} $\ast$}]{world}
+\end{DoxyParamCaption}
+)}}\label{main_8c_a87c51ee2e71f0707b7c964afc414f556}
+
+
+La fonction indique si le jeu est fini en fonction des données du monde. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em world} & les données du monde \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 si le jeu est fini, 0 sinon 
+\end{DoxyReturn}
+\hypertarget{main_8c_acf6aa8b4df15e32d435e49b11261bc0f}{\index{main.\-c@{main.\-c}!refresh\-\_\-graphics@{refresh\-\_\-graphics}}
+\index{refresh\-\_\-graphics@{refresh\-\_\-graphics}!main.c@{main.\-c}}
+\subsubsection[{refresh\-\_\-graphics}]{\setlength{\rightskip}{0pt plus 5cm}void refresh\-\_\-graphics (
+\begin{DoxyParamCaption}
+\item[{S\-D\-L\-\_\-\-Surface $\ast$}]{screen, }
+\item[{{\bf world\-\_\-t} $\ast$}]{world}
+\end{DoxyParamCaption}
+)}}\label{main_8c_acf6aa8b4df15e32d435e49b11261bc0f}
+
+
+La fonction rafrachit l'écran en fonction de l'état des données du monde. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em screen} & la surface de l'écran de jeu \\
+\hline
+{\em world} & les données du monde \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_a6c91f82a5ece8b14628159353390adf4}{\index{main.\-c@{main.\-c}!update\-\_\-data@{update\-\_\-data}}
+\index{update\-\_\-data@{update\-\_\-data}!main.c@{main.\-c}}
+\subsubsection[{update\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}void update\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{{\bf world\-\_\-t} $\ast$}]{world}
+\end{DoxyParamCaption}
+)}}\label{main_8c_a6c91f82a5ece8b14628159353390adf4}
+
+
+La fonction met à jour les données en tenant compte de la physique du monde. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em les} & données du monde \\
+\hline
+\end{DoxyParams}
